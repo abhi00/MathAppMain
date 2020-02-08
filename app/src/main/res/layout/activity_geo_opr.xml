@@ -19,7 +19,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/circle"
+        android:src="@drawable/bcircle"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/image_geo_opr"/>
 
     <TextView
@@ -27,97 +30,158 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:layout_margin="10dp"
         android:text="Enter One Value *"
         android:textColor="@color/white"/>
 
     <LinearLayout
+
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/first_linear"
+        android:weightSum="1"
+        android:gravity="center"
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
             android:text="First"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/first_text_label"/>
         <EditText
+
+            android:textSize="20sp"
+            android:background="@drawable/edit_text_background"
             android:id="@+id/first_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:hint="enter First Number"
-            android:layout_marginLeft="20sp"/>
+            android:layout_margin="10sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/second_linear"
+        android:gravity="center"
+        android:weightSum="1"
+
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
             android:text="Second"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/second_text_label"/>
         <EditText
+            android:textSize="20sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_margin="10sp"
             android:id="@+id/second_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.6"
             android:layout_height="wrap_content"
-            android:hint="enter second Number"
-            android:layout_marginLeft="20sp"/>
+
+           />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/third_linear"
+        android:gravity="center"
+        android:weightSum="1"
+
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
             android:text="third"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/third_text_label"/>
         <EditText
+            android:textSize="20sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_margin="10sp"
+
+            android:layout_weight="0.6"
             android:id="@+id/third_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="enter third Number"
+
             android:layout_marginLeft="20sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fourth_linear"
+        android:gravity="center"
+        android:weightSum="1"
+
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
             android:text="Fourth"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/fourth_text_label"/>
         <EditText
+            android:textSize="20sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_margin="10sp"
+
+            android:layout_weight="0.6"
+
             android:id="@+id/fourth_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="enter Fourth Number"
+
             android:layout_marginLeft="20sp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fifth_linear"
+        android:gravity="center"
+        android:weightSum="1"
+
         >
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
             android:layout_height="wrap_content"
             android:text="Fifth"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/fifth_text_label"/>
         <EditText
+
+            android:textSize="20sp"
+            android:background="@drawable/edit_text_background"
+            android:layout_margin="10sp"
+
+            android:layout_weight="0.6"
             android:id="@+id/fifth_edit"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="enter Fifth Number"
+
             android:layout_marginLeft="20sp"/>
     </LinearLayout>
 
@@ -130,10 +194,12 @@
         android:layout_height="wrap_content"
         android:text="Result"
         android:textSize="20sp"
+
         android:id="@+id/res_geo_opr"
         android:textColor="@color/white"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+
         android:id="@+id/fab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
