@@ -83,6 +83,76 @@ public class GeoOprActivity extends AppCompatActivity {
                   case"Circle Sector":
                       res.setText(setResultforCircleSector());
                       break;
+                  case "Pyramid":
+                      res.setText(setResultforPyramid());
+                      break;
+
+                  case "Hemisphere":
+                      res.setText(setResultforHemisphere());
+                      break;
+
+                  case "Tetrahedron":
+
+                      break;
+
+                  case "Sphere":
+
+                      break;
+
+                  case "Prism":
+                      res.setText(setResultforPrism());
+
+                      break;
+
+                  case "Octahedron":
+
+                      break;
+
+                  case "Icosahedron":
+
+                      break;
+
+                  case "Ellipsoid":
+
+                      break;
+
+                  case "Dodecahedron":
+
+                      break;
+                  case "Cylinder":
+                      res.setText(setResultforCylinder());
+                      break;
+
+                  case "Cube":
+
+                      break;
+
+                  case "Cone":
+                      res.setText(setResultforCone());
+
+                      break;
+
+                  case "Square":
+
+                      break;
+
+                  case "Rhombus":
+
+                      break;
+
+                  case "Regular Polygon":
+
+                      break;
+
+                  case "Rectangle":
+
+                      break;
+
+                  case "Pentagon":
+
+                      break;
+
+
               }
 
             }
@@ -150,6 +220,74 @@ public class GeoOprActivity extends AppCompatActivity {
             case"Circle":
                 setActivityforCircle();
                 break;
+            case "Pyramid":
+                setActivityforPyramid();
+                break;
+
+            case "Hemisphere":
+                setActivityforHemisphere();
+                break;
+
+            case "Tetrahedron":
+                setActivityfortetrahedron();
+                break;
+
+            case "Sphere":
+                setActivityforSphere();
+                break;
+
+            case "Prism":
+                setActivityforPrism();
+                break;
+
+            case "Octahedron":
+                setActivityforOctahedron();
+                break;
+
+            case "Icosahedron":
+                setActivityforIcosahedron();
+                break;
+
+            case "Ellipsoid":
+                setActivityforEllipsoid();
+                break;
+
+            case "Dodecahedron":
+                setActivityforDodecahedron();
+                break;
+            case "Cylinder":
+                setActivityforCylinder();
+                break;
+
+            case "Cube":
+                setActivityforCube();
+                break;
+
+            case "Cone":
+                setActivityforCone();
+                break;
+
+            case "Square":
+                setActivityforSquare();
+                break;
+
+            case "Rhombus":
+                setActivityforRhombus();
+                break;
+
+            case "Regular Polygon":
+                setActivityforRegularPolygon();
+                break;
+
+            case "Rectangle":
+                setActivityforRectangle();
+                break;
+
+            case "Pentagon":
+                setActivityforPentagon();
+                break;
+
+
 
         }
 
@@ -165,6 +303,42 @@ public class GeoOprActivity extends AppCompatActivity {
 
     private void setActivityforDistancebetweenpoints() {
     }
+    private void setActivityforRectangle() {
+    }
+
+    private void setActivityforRegularPolygon() {
+    }
+
+    private void setActivityforRhombus() {
+    }
+
+    private void setActivityforSquare() {
+    }
+
+
+    private void setActivityforCube() {
+    }
+
+
+    private void setActivityforDodecahedron() {
+    }
+
+    private void setActivityforEllipsoid() {
+    }
+
+    private void setActivityforIcosahedron() {
+    }
+
+    private void setActivityforOctahedron() {
+    }
+
+
+    private void setActivityforSphere() {
+    }
+
+    private void setActivityfortetrahedron() {
+    }
+
 
 
 
@@ -803,6 +977,447 @@ public void setActivityforEquilateralTriangle() {
 
 
 
+
+    /*====================================== Pyramid ===========================================*/
+
+    private void setActivityforPyramid() {
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.pyramid);
+        text_main.setText("Enter all values");
+        third_text.setText(getResources().getString(R.string.length));
+        fourth_text.setText(getResources().getString(R.string.height));
+        fifth_text.setText(getResources().getString(R.string.width));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.pyramid_Spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                switch (i) {
+
+                    case 0:
+                        spinner_count = 0;
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        break;
+                    case 2:
+                        spinner_count = 2;
+                        break;
+
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+    }
+
+    public String setResultforPyramid() {
+
+        Pyramid pyramid = new Pyramid();
+        String output = null;
+        double x = Double.parseDouble(third_edit.getText().toString());
+        double y = Double.parseDouble(fourth_edit.getText().toString());
+        double z = Double.parseDouble(fifth_edit.getText().toString());
+        if (third_edit != null && fourth_edit != null && fifth_edit != null) {
+            switch (spinner_count) {
+                case 0:
+                    output = pyramid.getArea(x, y, z);
+                    break;
+                case 1:
+                    output = pyramid.getVolume(x, y, z);
+                    break;
+                case 2:
+                    output = pyramid.getLateralArea(x, y, z);
+                    break;
+
+            }
+
+
+        } else {
+            output = "please Enter Value";
+        }
+        return output;
+
+
+    }
+    /*====================================== Cone ===========================================*/
+
+    private void setActivityforCone() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.cone);
+        text_main.setText(getResources().getString(R.string.all_val));
+        fourth_text.setText(getResources().getString(R.string.rad));
+        fifth_text.setText(getResources().getString(R.string.height));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.cone_spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        spinner_count = 0;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.rad));
+                        fifth_text.setText(getResources().getString(R.string.height));
+
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        fourth_text.setText(getResources().getString(R.string.rad));
+                        fifth_text.setText(getResources().getString(R.string.height));
+
+                        break;
+                    case 2:
+                        spinner_count = 2;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.volume));
+                        fifth_text.setText(getResources().getString(R.string.height));
+
+                        break;
+                    case 3:
+                        spinner_count = 3;
+
+                        fourth_text.setText(getResources().getString(R.string.rad));
+
+                        fifth_linear.setVisibility(View.INVISIBLE);
+
+                        break;
+                    case 4:
+                        spinner_count = 4;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.volume));
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public String setResultforCone() {
+
+        Cone cone = new Cone();
+        String output = null;
+        double y = Double.parseDouble(fourth_edit.getText().toString());
+        double z = Double.parseDouble(fifth_edit.getText().toString());
+        if (fourth_edit != null && fifth_edit != null) {
+            switch (spinner_count) {
+                case 0:
+                    output = cone.getArea(y, z);
+                    break;
+                case 1:
+                    output = cone.getVolume(y, z);
+                    break;
+                case 2:
+                    output = cone.getResultByvh(y, z);
+                    break;
+                case 3:
+                    output = cone.getResultByr(y);
+                    break;
+                case 4:
+                    output = cone.getResultByvr(y, z);
+                    break;
+
+            }
+
+
+        } else {
+            output = "please Enter Value";
+        }
+        return output;
+    }
+
+
+    /*====================================== Cone ===========================================*/
+    private void setActivityforCylinder() {
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.cylinder);
+        text_main.setText("Input Values");
+        fourth_text.setText(getResources().getString(R.string.height));
+        fifth_text.setText(getResources().getString(R.string.rad));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.cylinder_spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        spinner_count = 0;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.height));
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.height));
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+                        break;
+                    case 2:
+                        spinner_count = 2;
+
+                        fourth_text.setText(getResources().getString(R.string.dia));
+                        fifth_linear.setVisibility(View.INVISIBLE);
+
+                        break;
+                    case 3:
+                        spinner_count = 3;
+
+                        fourth_text.setText(getResources().getString(R.string.rad));
+
+                        fifth_linear.setVisibility(View.INVISIBLE);
+
+                        break;
+                    case 4:
+                        spinner_count = 4;
+                        fifth_linear.setVisibility(View.VISIBLE);
+
+                        fourth_text.setText(getResources().getString(R.string.volume));
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+
+                }
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+    public String setResultforCylinder() {
+
+        Cylinder cylinder = new Cylinder();
+        String output = null;
+        double y = Double.parseDouble(fourth_edit.getText().toString());
+        double z = Double.parseDouble(fifth_edit.getText().toString());
+        if (fourth_edit != null && fifth_edit != null) {
+            switch (spinner_count) {
+                case 0:
+                    output = cylinder.getArea(y, z);
+                    break;
+                case 1:
+                    output = cylinder.getVolume(y, z);
+                    break;
+                case 2:
+                    output = cylinder.getResultByd(y);
+                    break;
+                case 3:
+                    output = cylinder.getResultByr(y);
+                    break;
+                case 4:
+                    output = cylinder.getResultByvr(y, z);
+                    break;
+
+            }
+
+
+        } else {
+            output = "please Enter Value";
+        }
+        return output;
+
+    }
+
+    /*====================================== Prism ===========================================*/
+    private void setActivityforPrism() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.prism);
+        text_main.setText("Enter all values");
+        third_text.setText(getResources().getString(R.string.length));
+        fourth_text.setText(getResources().getString(R.string.height));
+        fifth_text.setText(getResources().getString(R.string.width));
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.prism_spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+
+                    case 0:
+                        spinner_count = 0;
+                        third_text.setText(getResources().getString(R.string.length));
+                        fourth_text.setText(getResources().getString(R.string.width));
+                        fifth_text.setText(getResources().getString(R.string.height));
+                        break;
+                    case 1:
+                        spinner_count = 1;
+                        third_text.setText(getResources().getString(R.string.length));
+                        fourth_text.setText(getResources().getString(R.string.width));
+                        fifth_text.setText(getResources().getString(R.string.height));
+                        break;
+
+
+                    case 2:
+                        spinner_count = 2;
+                        third_text.setText(getResources().getString(R.string.length));
+                        fourth_text.setText(getResources().getString(R.string.height));
+                        fifth_text.setText(getResources().getString(R.string.volume));
+                        break;
+                    case 3:
+                        spinner_count = 3;
+                        third_text.setText(getResources().getString(R.string.width));
+                        fourth_text.setText(getResources().getString(R.string.height));
+                        fifth_text.setText(getResources().getString(R.string.volume));
+                        break;
+                    case 4:
+                        spinner_count = 4;
+                        third_text.setText(getResources().getString(R.string.length));
+                        fourth_text.setText(getResources().getString(R.string.width));
+                        fifth_text.setText(getResources().getString(R.string.volume));
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+
+    public String setResultforPrism() {
+
+        Prism prism = new Prism();
+        String output = null;
+        double x = Double.parseDouble(third_edit.getText().toString());
+        double y = Double.parseDouble(fourth_edit.getText().toString());
+        double z = Double.parseDouble(fifth_edit.getText().toString());
+        if (third_edit != null && fourth_edit != null && fifth_edit != null) {
+            switch (spinner_count) {
+                case 0:
+                    output = prism.getArea(x, y, z);
+                    break;
+                case 1:
+                    output = prism.getVolume(x, y, z);
+                    break;
+                case 2:
+                    output = prism.getwidth(x, z, y);
+                    break;
+                case 3:
+                    output = prism.getLength(x, z, y);
+                    break;
+                case 4:
+                    output = prism.getHeight(x, y, z);
+                    break;
+
+            }
+
+
+        } else {
+            output = "please Enter Value";
+        }
+        return output;
+
+    }
+
+
+    /*====================================== Hemisphere ===========================================*/
+    private void setActivityforHemisphere() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        fourth_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.hemisphere);
+        text_main.setText("Enter Value");
+        fifth_text.setText(getResources().getString(R.string.rad));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.hemisphere_spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        spinner_count = 0;
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        fifth_text.setText(getResources().getString(R.string.rad));
+
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public String setResultforHemisphere() {
+
+        HemiSphere hemiSphere = new HemiSphere();
+        String output = null;
+        double x = Double.parseDouble(fifth_edit.getText().toString());
+
+
+        if (fifth_edit != null) {
+            switch (spinner_count) {
+                case 0:
+                    output = hemiSphere.getResultByRadius(x);
+                    break;
+                case 1:
+                    output = hemiSphere.getResultByRadius(x);
+                    break;
+            }
+
+
+        } else {
+            output = "please Enter Value";
+        }
+        return output;
+
+    }
+
+
+    /*======================================Pentagon===========================================*/
+
+    private void setActivityforPentagon() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.pentagon);
+        text_main.setText(R.string.all_val);
+        third_text.setText(getResources().getString(R.string.rad));
+        fourth_text.setText(getResources().getString(R.string.rad));
+        fifth_text.setText(getResources().getString(R.string.rad));
+    }
 
 }
 

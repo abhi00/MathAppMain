@@ -26,6 +26,8 @@
     <string name="all_val">Enter All Values</string>
     <string name="dia">Diameter</string>
     <string name="intent_key">type</string>
+    <string name="volume">Volume</string>
+
     <string-array name="unit_converter">
 
 
