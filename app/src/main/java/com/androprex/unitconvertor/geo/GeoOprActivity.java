@@ -22,10 +22,10 @@ public class GeoOprActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     Spinner spinner_text;
-    LinearLayout first_linear,second_linear,third_linear,fourth_linear,fifth_linear;
-    TextView first_text,second_text,third_text,fourth_text,fifth_text ,res,text_main;
+    LinearLayout first_linear, second_linear, third_linear, fourth_linear, fifth_linear;
+    TextView first_text, second_text, third_text, fourth_text, fifth_text, res, text_main;
     ImageView image;
-    EditText first_edit,second_edit,third_edit,fourth_edit,fifth_edit;
+    EditText first_edit, second_edit, third_edit, fourth_edit, fifth_edit;
     String type_opr;
     int spinner_count;
 
@@ -63,97 +63,97 @@ public class GeoOprActivity extends AppCompatActivity {
 
         res = findViewById(R.id.res_geo_opr);
 
-       type_opr = getIntent().getExtras().getString(getResources().getString(R.string.intent_key));
+        type_opr = getIntent().getExtras().getString(getResources().getString(R.string.intent_key));
         setView();
         FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              switch (type_opr) {
-                  case "Isosceles":
-                  res.setText(setResultforIsosceles());
-                  break;
-                  case "Right TriAngle":
-                      res.setText(setResultforRightAngle());
-                      break;
-                  case"Parallelogram":
-                      res.setText(setResultforParallelogram());
-                      break;
-                  case"Circle Sector":
-                      res.setText(setResultforCircleSector());
-                      break;
-                  case "Pyramid":
-                      res.setText(setResultforPyramid());
-                      break;
+                switch (type_opr) {
+                    case "Isosceles":
+                        res.setText(setResultforIsosceles());
+                        break;
+                    case "Right TriAngle":
+                        res.setText(setResultforRightAngle());
+                        break;
+                    case "Parallelogram":
+                        res.setText(setResultforParallelogram());
+                        break;
+                    case "Circle Sector":
+                        res.setText(setResultforCircleSector());
+                        break;
+                    case "Pyramid":
+                        res.setText(setResultforPyramid());
+                        break;
 
-                  case "Hemisphere":
-                      res.setText(setResultforHemisphere());
-                      break;
+                    case "Hemisphere":
+                        res.setText(setResultforHemisphere());
+                        break;
 
-                  case "Tetrahedron":
+                    case "Tetrahedron":
 
-                      break;
+                        break;
 
-                  case "Sphere":
+                    case "Sphere":
 
-                      break;
+                        break;
 
-                  case "Prism":
-                      res.setText(setResultforPrism());
+                    case "Prism":
+                        res.setText(setResultforPrism());
 
-                      break;
+                        break;
 
-                  case "Octahedron":
+                    case "Octahedron":
 
-                      break;
+                        break;
 
-                  case "Icosahedron":
+                    case "Icosahedron":
 
-                      break;
+                        break;
 
-                  case "Ellipsoid":
+                    case "Ellipsoid":
 
-                      break;
+                        break;
 
-                  case "Dodecahedron":
+                    case "Dodecahedron":
 
-                      break;
-                  case "Cylinder":
-                      res.setText(setResultforCylinder());
-                      break;
+                        break;
+                    case "Cylinder":
+                        res.setText(setResultforCylinder());
+                        break;
 
-                  case "Cube":
+                    case "Cube":
 
-                      break;
+                        break;
 
-                  case "Cone":
-                      res.setText(setResultforCone());
+                    case "Cone":
+                        res.setText(setResultforCone());
 
-                      break;
+                        break;
 
-                  case "Square":
+                    case "Square":
 
-                      break;
+                        break;
 
-                  case "Rhombus":
+                    case "Rhombus":
 
-                      break;
+                        break;
 
-                  case "Regular Polygon":
+                    case "Regular Polygon":
+                     res.setText(setResultforRegular());
+                        break;
 
-                      break;
+                    case "Rectangle":
 
-                  case "Rectangle":
+                        break;
 
-                      break;
+                    case "Pentagon":
 
-                  case "Pentagon":
-
-                      break;
+                        break;
 
 
-              }
+                }
 
             }
         });
@@ -162,11 +162,9 @@ public class GeoOprActivity extends AppCompatActivity {
     }
 
 
-    public void setView()
-    {
+    public void setView() {
 
-        switch(type_opr)
-        {
+        switch (type_opr) {
 
             case "Isosceles":
                 setActivityforIsosceles();
@@ -179,45 +177,45 @@ public class GeoOprActivity extends AppCompatActivity {
             case "Equilateral":
                 setActivityforEquilateralTriangle();
                 break;
-            case"Decagon":
+            case "Decagon":
                 setActivityforDecagon();
                 break;
-            case"Eclipse":
+            case "Eclipse":
                 setActivityforEclipse();
                 break;
-            case"Heptagon":
+            case "Heptagon":
                 setActivityforHeptagon();
                 break;
-            case"Hexagon":
+            case "Hexagon":
                 setActivityforHexagon();
                 break;
-            case"Circle Sector":
+            case "Circle Sector":
                 setActivityforCircleSector();
-            break;
+                break;
 
-            case"Distance between points":
+            case "Distance between points":
                 setActivityforDistancebetweenpoints();
                 break;
-            case"Mid-Point of line":
+            case "Mid-Point of line":
                 setActivityforMidPointofline();
                 break;
 
-            case"Slop of line":
+            case "Slop of line":
                 setActivityforSlopOfline();
                 break;
 
-            case"Nonagon":
+            case "Nonagon":
                 setActivityforNonagon();
                 break;
 
-            case"Octagon":
+            case "Octagon":
                 setActivityforOctagon();
                 break;
 
-            case"Parallelogram":
+            case "Parallelogram":
                 setActivityforParallelogram();
                 break;
-            case"Circle":
+            case "Circle":
                 setActivityforCircle();
                 break;
             case "Pyramid":
@@ -275,8 +273,8 @@ public class GeoOprActivity extends AppCompatActivity {
                 setActivityforRhombus();
                 break;
 
-            case "Regular Polygon":
-                setActivityforRegularPolygon();
+            case "Regular ":
+                setActivityforRegular();
                 break;
 
             case "Rectangle":
@@ -288,14 +286,10 @@ public class GeoOprActivity extends AppCompatActivity {
                 break;
 
 
-
         }
 
 
-
-
     }
-
 
 
     private void setActivityforMidPointofline() {
@@ -303,55 +297,10 @@ public class GeoOprActivity extends AppCompatActivity {
 
     private void setActivityforDistancebetweenpoints() {
     }
-    private void setActivityforRectangle() {
-    }
-
-    private void setActivityforRegularPolygon() {
-    }
-
-    private void setActivityforRhombus() {
-    }
-
-    private void setActivityforSquare() {
-    }
-
-
-    private void setActivityforCube() {
-    }
-
-
-    private void setActivityforDodecahedron() {
-    }
-
-    private void setActivityforEllipsoid() {
-    }
-
-    private void setActivityforIcosahedron() {
-    }
-
-    private void setActivityforOctahedron() {
-    }
-
-
-    private void setActivityforSphere() {
-    }
-
-    private void setActivityfortetrahedron() {
-    }
 
 
 
-
-
-
-
-
-
-
-
-
-    public void setActivityforIsosceles()
-    {
+    public void setActivityforIsosceles() {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
@@ -359,54 +308,53 @@ public class GeoOprActivity extends AppCompatActivity {
         image.setImageResource(R.drawable.isosceles);
         third_text.setText(getResources().getString(R.string.sideb));
         fourth_text.setText(getResources().getString(R.string.height));
-        spinner_text.setAdapter(new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,getResources().getStringArray(R.array.isosceles_triangle_spinner_text)));
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.isosceles_triangle_spinner_text)));
         spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 third_text.setText(getResources().getString(R.string.baseb));
                 fourth_text.setText(getResources().getString(R.string.height));
-                switch (i)
-                {
+                switch (i) {
                     case 0:
                         third_text.setText(getResources().getString(R.string.baseb));
                         fourth_text.setText(getResources().getString(R.string.height));
 
-                        spinner_count =0;
+                        spinner_count = 0;
 
 
                         break;
                     case 1:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.baseb));
-                        spinner_count =1;
+                        spinner_count = 1;
                         break;
                     case 2:
 
                         third_text.setText(getResources().getString(R.string.baseb));
                         fourth_text.setText(getResources().getString(R.string.height));
-                        spinner_count =2;
+                        spinner_count = 2;
 
                         break;
                     case 3:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.height));
-                        spinner_count =3;
+                        spinner_count = 3;
                         break;
                     case 4:
 
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.baseb));
-                        spinner_count =4;
+                        spinner_count = 4;
                         break;
                     case 5:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.height));
-                        spinner_count =5;
+                        spinner_count = 5;
                         break;
                     case 6:
                         third_text.setText(getResources().getString(R.string.area));
                         fourth_text.setText(getResources().getString(R.string.sidea));
-                        spinner_count =6;
+                        spinner_count = 6;
                         break;
 
                 }
@@ -414,13 +362,11 @@ public class GeoOprActivity extends AppCompatActivity {
             }
 
 
-
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
-
 
 
     }
@@ -455,26 +401,24 @@ public class GeoOprActivity extends AppCompatActivity {
                     break;
                 case 3:
 
-                    output = triangle.getBaseByah(x,y);
+                    output = triangle.getBaseByah(x, y);
 
                     break;
                 case 4:
-                    output = triangle.getHeightByab(x,y);
+                    output = triangle.getHeightByab(x, y);
                     break;
                 case 5:
-                    output = triangle.getAngleByah(x,y);
+                    output = triangle.getAngleByah(x, y);
                     break;
 
                 case 6:
-                    output = triangle.getAngleByara(x,y);
+                    output = triangle.getAngleByara(x, y);
                     break;
             }
 
 
-        }
-        else
-        {
-         output = "Please Enter Value";
+        } else {
+            output = "Please Enter Value";
         }
 
         return output;
@@ -484,8 +428,6 @@ public class GeoOprActivity extends AppCompatActivity {
 
 
     /*-------------------------------------------Right Triangle------------------------------------------*/
-
-
 
 
     public void setActivityforRightTriangle() {
@@ -500,14 +442,13 @@ public class GeoOprActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                switch (i)
-                {
+                switch (i) {
                     case 0:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.sideb));
 
 
-                        spinner_count =0;
+                        spinner_count = 0;
 
 
                         break;
@@ -515,36 +456,35 @@ public class GeoOprActivity extends AppCompatActivity {
                         third_text.setText(getResources().getString(R.string.sideb));
                         fourth_text.setText(getResources().getString(R.string.sidec));
 
-                        spinner_count =1;
+                        spinner_count = 1;
                         break;
                     case 2:
 
 
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.sidec));
-                        spinner_count =2;
+                        spinner_count = 2;
 
                         break;
                     case 3:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.sideb));
-                        spinner_count =3;
+                        spinner_count = 3;
                         break;
                     case 4:
                         third_text.setText(getResources().getString(R.string.sidea));
                         fourth_text.setText(getResources().getString(R.string.sidec));
-                        spinner_count =4;
+                        spinner_count = 4;
                         break;
                     case 5:
                         third_text.setText(getResources().getString(R.string.sideb));
                         fourth_text.setText(getResources().getString(R.string.sidec));
-                        spinner_count =5;
+                        spinner_count = 5;
                         break;
 
                 }
 
             }
-
 
 
             @Override
@@ -557,10 +497,9 @@ public class GeoOprActivity extends AppCompatActivity {
     }
 
 
-
     public String setResultforRightAngle() {
 
-        RightTringle triangle  = new RightTringle();
+        RightTringle triangle = new RightTringle();
 
         String output = null;
 
@@ -589,23 +528,21 @@ public class GeoOprActivity extends AppCompatActivity {
                     break;
                 case 3:
 
-                    output = triangle.getSideC(x,y);
+                    output = triangle.getSideC(x, y);
 
                     break;
                 case 4:
-                    output = triangle.getAlpha(x,y);
+                    output = triangle.getAlpha(x, y);
                     break;
                 case 5:
-                    output = triangle.getBeta(x,y);
+                    output = triangle.getBeta(x, y);
                     break;
 
 
             }
 
 
-        }
-        else
-        {
+        } else {
             output = "Please Enter Value";
         }
 
@@ -613,22 +550,20 @@ public class GeoOprActivity extends AppCompatActivity {
     }
 
 
+    /*====================================== Equilateral ===========================================*/
+    public void setActivityforEquilateralTriangle() {
+
+        fifth_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.equilateral);
+        spinner_text.setVisibility(View.GONE);
+        text_main.setText(getResources().getString(R.string.one_val));
+        first_text.setText(getResources().getString(R.string.area));
+        second_text.setText(getResources().getString(R.string.perimeter));
+        third_text.setText(getResources().getString(R.string.sidea));
+        fourth_text.setText(getResources().getString(R.string.height));
 
 
-/*====================================== Equilateral ===========================================*/
-public void setActivityforEquilateralTriangle() {
-
-    fifth_linear.setVisibility(View.GONE);
-    image.setImageResource(R.drawable.equilateral);
-    spinner_text.setVisibility(View.GONE);
-    text_main.setText(getResources().getString(R.string.one_val));
-    first_text.setText(getResources().getString(R.string.area));
-    second_text.setText(getResources().getString(R.string.perimeter));
-    third_text.setText(getResources().getString(R.string.sidea));
-    fourth_text.setText(getResources().getString(R.string.height));
-
-
-}
+    }
 
 
 
@@ -642,51 +577,48 @@ public void setActivityforEquilateralTriangle() {
         text_main.setText(getResources().getString(R.string.all_val));
         fourth_text.setText(getResources().getString(R.string.sideb));
         fifth_text.setText(getResources().getString(R.string.height));
-        spinner_text.setAdapter(new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,getResources().getStringArray(R.array.parallelogram_spinner_text)));
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.parallelogram_spinner_text)));
         spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (position)
-                {
+                switch (position) {
                     case 0:
                         fourth_text.setText(getResources().getString(R.string.sideb));
                         fifth_text.setText(getResources().getString(R.string.height));
 
 
-                        spinner_count =0;
+                        spinner_count = 0;
 
 
                         break;
                     case 1:
                         fourth_text.setText(getResources().getString(R.string.sidea));
                         fifth_text.setText(getResources().getString(R.string.sideb));
-                        spinner_count =1;
+                        spinner_count = 1;
                         break;
                     case 2:
 
                         fourth_text.setText(getResources().getString(R.string.perimeter));
                         fifth_text.setText(getResources().getString(R.string.sideb));
-                        spinner_count =2;
+                        spinner_count = 2;
 
                         break;
                     case 3:
 
                         fourth_text.setText(getResources().getString(R.string.area));
                         fifth_text.setText(getResources().getString(R.string.height));
-                        spinner_count =3;
+                        spinner_count = 3;
                         break;
                     case 4:
 
                         fourth_text.setText(getResources().getString(R.string.height));
                         fifth_text.setText(getResources().getString(R.string.sidea));
-                        spinner_count =4;
+                        spinner_count = 4;
                         break;
 
 
                 }
-
-
 
 
             }
@@ -698,9 +630,6 @@ public void setActivityforEquilateralTriangle() {
         });
 
     }
-
-
-
 
 
     public String setResultforParallelogram() {
@@ -717,7 +646,7 @@ public void setActivityforEquilateralTriangle() {
                 case 0:
 
 
-                    output = triangle.getResultBybh(x,y);
+                    output = triangle.getResultBybh(x, y);
 
                     break;
                 case 1:
@@ -732,18 +661,16 @@ public void setActivityforEquilateralTriangle() {
                     break;
                 case 3:
 
-                    output = triangle.getResultByha(x,y);
+                    output = triangle.getResultByha(x, y);
 
                     break;
                 case 4:
-                    output = triangle.getResultByarh(x,y);
+                    output = triangle.getResultByarh(x, y);
 
             }
 
 
-        }
-        else
-        {
+        } else {
             output = "Please Enter Value";
         }
 
@@ -769,8 +696,7 @@ public void setActivityforEquilateralTriangle() {
         spinner_text.setVisibility(View.GONE);
 
 
-
-            }
+    }
 
     /*====================================== Nonagon ===========================================*/
 
@@ -838,7 +764,6 @@ public void setActivityforEquilateralTriangle() {
     private void setActivityforCircleSector() {
 
 
-
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
@@ -851,15 +776,14 @@ public void setActivityforEquilateralTriangle() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 fourth_text.setText(getResources().getString(R.string.rad));
                 fifth_text.setText(getResources().getString(R.string.angle));
-                switch (position)
-                {
+                switch (position) {
                     case 0:
 
-                        spinner_count =0;
+                        spinner_count = 0;
                         break;
                     case 1:
 
-                        spinner_count =1;
+                        spinner_count = 1;
                         break;
 
                 }
@@ -876,8 +800,8 @@ public void setActivityforEquilateralTriangle() {
 
     public String setResultforCircleSector() {
 
-        CircleSector triangle= new CircleSector();
-                String output = null;
+        CircleSector triangle = new CircleSector();
+        String output = null;
 
         double x = Double.parseDouble(fourth_edit.getText().toString());
 
@@ -887,7 +811,7 @@ public void setActivityforEquilateralTriangle() {
 
             switch (spinner_count) {
                 case 0:
-                    output = triangle.getResultByralpha(x,y);
+                    output = triangle.getResultByralpha(x, y);
 
                     break;
                 case 1:
@@ -898,9 +822,7 @@ public void setActivityforEquilateralTriangle() {
             }
 
 
-        }
-        else
-        {
+        } else {
             output = "Please Enter Value";
         }
 
@@ -925,13 +847,13 @@ public void setActivityforEquilateralTriangle() {
 
 
     }
+
     public void setResultforCircle() {
 
         second_text.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
 
-                
 
                 return false;
             }
@@ -943,7 +865,6 @@ public void setActivityforEquilateralTriangle() {
 
 
     /*======================================Ellipse ===========================================*/
-
 
 
     private void setActivityforEclipse() {
@@ -985,7 +906,7 @@ public void setActivityforEquilateralTriangle() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.pyramid);
-        text_main.setText("Enter all values");
+        text_main.setText(R.string.all_val);
         third_text.setText(getResources().getString(R.string.length));
         fourth_text.setText(getResources().getString(R.string.height));
         fifth_text.setText(getResources().getString(R.string.width));
@@ -1149,14 +1070,14 @@ public void setActivityforEquilateralTriangle() {
     }
 
 
-    /*====================================== Cone ===========================================*/
+    /*====================================== Cylinder ===========================================*/
     private void setActivityforCylinder() {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.cylinder);
-        text_main.setText("Input Values");
+        text_main.setText(R.string.input_value);
         fourth_text.setText(getResources().getString(R.string.height));
         fifth_text.setText(getResources().getString(R.string.rad));
 
@@ -1256,7 +1177,7 @@ public void setActivityforEquilateralTriangle() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.prism);
-        text_main.setText("Enter all values");
+        text_main.setText(R.string.all_val);
         third_text.setText(getResources().getString(R.string.length));
         fourth_text.setText(getResources().getString(R.string.height));
         fifth_text.setText(getResources().getString(R.string.width));
@@ -1352,7 +1273,7 @@ public void setActivityforEquilateralTriangle() {
         third_linear.setVisibility(View.GONE);
         fourth_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.hemisphere);
-        text_main.setText("Enter Value");
+        text_main.setText(R.string.input_value);
         fifth_text.setText(getResources().getString(R.string.rad));
 
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.hemisphere_spinner_text)));
@@ -1413,12 +1334,220 @@ public void setActivityforEquilateralTriangle() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.pentagon);
-        text_main.setText(R.string.all_val);
-        third_text.setText(getResources().getString(R.string.rad));
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.perimeter));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+    /*======================================Tetrahedron===========================================*/
+
+    private void setActivityfortetrahedron() {
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.tetrahedron);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.volume));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+
+    /*======================================Sphere===========================================*/
+
+
+    private void setActivityforSphere() {
+
+        first_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.sphere);
+        text_main.setText(R.string.one_val);
+        second_text.setText(getResources().getString(R.string.area));
+        third_text.setText(getResources().getString(R.string.volume));
         fourth_text.setText(getResources().getString(R.string.rad));
-        fifth_text.setText(getResources().getString(R.string.rad));
+        fifth_text.setText(getResources().getString(R.string.dia));
+    }
+
+    /*======================================Octahedron===========================================*/
+
+    private void setActivityforOctahedron() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.octahedron);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.volume));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+    /*======================================Icosahedron===========================================*/
+
+    private void setActivityforIcosahedron() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.icosahedron);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.volume));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+
+    /*======================================Ellipsoid===========================================*/
+    private void setActivityforEllipsoid() {
+        image.setImageResource(R.drawable.ellipsoid);
+        text_main.setText(R.string.three_val);
+        first_text.setText(getResources().getString(R.string.area));
+        second_text.setText(getResources().getString(R.string.volume));
+        third_text.setText(getResources().getString(R.string.axis_a));
+        fourth_text.setText(getResources().getString(R.string.axis_b));
+        fifth_text.setText(getResources().getString(R.string.axis_c));
+    }
+    /*======================================Dodecahedron===========================================*/
+
+    private void setActivityforDodecahedron() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.dodecahedron);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.volume));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+    /*======================================Cube===========================================*/
+
+    private void setActivityforCube() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.cube);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.volume));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+    /*======================================Square===========================================*/
+
+    private void setActivityforSquare() {
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.square);
+        text_main.setText(R.string.one_val);
+        third_text.setText(getResources().getString(R.string.area));
+        fourth_text.setText(getResources().getString(R.string.perimeter));
+        fifth_text.setText(getResources().getString(R.string.sidea));
+    }
+    /*======================================Rhombus===========================================*/
+
+    private void setActivityforRhombus() {
+
+    }
+
+    /*======================================Regular polygon===========================================*/
+    private void setActivityforRegular() {
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        first_text.setText(R.string.one_val);
+        image.setImageResource(R.drawable.regular);
+        text_main.setText(getResources().getString(R.string.input_value));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.regular_polygon_spinner_text)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                fourth_text.setText(getResources().getString(R.string.sidea));
+                fifth_text.setText(getResources().getString(R.string.number_edge));
+                switch (i) {
+                    case 0:
+                        spinner_count = 0;
+                        fourth_text.setText(getResources().getString(R.string.sidea));
+                        fifth_text.setText(getResources().getString(R.string.number_edge));
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        fourth_text.setText(getResources().getString(R.string.sidea));
+                        fifth_text.setText(getResources().getString(R.string.number_edge));
+
+                        break;
+                    case 2:
+                        spinner_count = 2;
+                        fourth_text.setText(getResources().getString(R.string.perimeter));
+                        fifth_text.setText(getResources().getString(R.string.sidea));
+                        break;
+
+                    case 3:
+                        spinner_count = 3;
+                        fourth_text.setText(getResources().getString(R.string.perimeter));
+                        fifth_text.setText(getResources().getString(R.string.number_edge));
+                        break;
+
+                    case 4:
+                        spinner_count = 4;
+                        fourth_text.setText(getResources().getString(R.string.perimeter));
+                        fifth_text.setText(getResources().getString(R.string.sidea));
+                        break;
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public String setResultforRegular() {
+
+        RegularPolygon regular = new RegularPolygon();
+        String output = null;
+
+        double x = Double.parseDouble(fourth_edit.getText().toString());
+
+        double y = Double.parseDouble(fifth_edit.getText().toString());
+
+        if (fourth_edit != null && fifth_edit != null) {
+
+            switch (spinner_count) {
+                case 0:
+                    output = regular.getAreaByan(x, y);
+
+                    break;
+                case 1:
+                    output = regular.getAreaByan(x, y);
+                    break;
+                case 2:
+                    output = regular.getAngleBypa(x, y);
+                    break;
+                case 3:
+                    output = regular.getSideBypn(x, y);
+                    break;
+                case 4:
+                    output = regular.getAngleBypa(x, y);
+                    break;
+
+
+            }
+
+
+        } else {
+            output = "Please Enter Value";
+        }
+
+        return output;
+    }
+    /*======================================Rectangle===========================================*/
+
+    private void setActivityforRectangle() {
+
     }
 
 }
+
+
+
+
+
+
 
 
