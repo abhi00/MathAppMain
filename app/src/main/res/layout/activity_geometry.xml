@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/geobackgraound"
+    tools:context=".geo.GeometryActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_geo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.MyFancyTheme" />
+
+    <com.yarolegovich.discretescrollview.DiscreteScrollView
+        android:id="@+id/picker_geo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:dsv_orientation="horizontal" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/geo_recy"
+        />
+
+
+
+</LinearLayout>

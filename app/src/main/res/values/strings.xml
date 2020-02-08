@@ -1,0 +1,515 @@
+<resources>
+    <string name="app_name">UnitConvertor</string>
+    <string name="sidea">Side(a)</string>
+    <string name="sidec">Side(c)</string>
+    <string name="baseb">Base(B)</string>
+
+    <string name="sideb">Side(b)</string>
+    <string name="length">Length.</string>
+    <string name="height">Height.</string>
+    <string name="width">Width.</string>
+    <string name="perimeter">Perimeter</string>
+    <string name="alpha">Alpha</string>
+    <string name="beta">Beta</string>
+    <string name="area">Area</string>
+    <string name="rad">Radius(R)</string>
+    <string name="angle">Angle</string>
+    <string name="two_val">Enter Any 2 Value</string>
+    <string name="point_val">Enter all Points</string>
+    <string name="diap">Diameter(P)</string>
+    <string name="diaq">Diameter(Q)</string>
+    <string name="point1">Point 1</string>
+    <string name="point2"> Point2</string>
+
+    <string name="one_val">Enter Any 1 Value</string>
+    <string name="circ">Circumference</string>
+    <string name="all_val">Enter All Values</string>
+    <string name="dia">Diameter</string>
+    <string name="intent_key">type</string>
+    <string-array name="unit_converter">
+
+
+
+        <item>Length</item>
+        <item>Area</item>
+        <item>Weight</item>
+        <item>Temperature</item>
+        <item>Time</item>
+        <item>Volume</item>
+
+    </string-array>
+
+    <string-array name="geo_heading">
+
+        <item>Trianguler</item>
+        <item>Polygon</item>
+        <item>Quadrilteral</item>
+        <item>Polyhedron</item>
+        <item>Lines</item>
+        <item>Round</item>
+
+
+    </string-array>
+    <string-array name="geo_sub_heading">
+        <item>Shapes</item>
+        <item>Shapes</item>
+        <item>Shapes</item>
+        <item>Geometry</item>
+        <item>Shapes</item>
+        <item>Shapes</item>
+    </string-array>
+    <string-array name="triangle_shape_attribute">
+        <item>Isosceles</item>
+        <item>Right TriAngle</item>
+        <item>Equilateral</item>
+        <item>Cone</item>
+    </string-array>
+
+    <string-array name="polygon_shape_attribute">
+       <item>Decagon</item>
+        <item>Petagon</item>
+        <item>Heptagon</item>
+        <item>Hexagon</item>
+        <item>Octagon</item>
+        <item>Nonagon</item>
+        <item>Regular</item>
+
+    </string-array>
+
+
+    <string-array name="round_shape_attribute">
+        <item>Circle</item>
+        <item>Circle Sector</item>
+        <item>Eclipse</item>
+        <item>Sphere</item>
+        <item>Cylinder</item>
+        <item>Hemisphere</item>
+        <item>Ellipsoid</item>
+    </string-array>
+    <string-array name="quadrilatral_shape_attribute">
+        <item>Rectangle</item>
+        <item>Square</item>
+        <item>Parallelogram</item>
+        <item>Rhombus</item>
+        </string-array>
+    <string-array name="poly_shape_attribute">
+        <item>Dodecahedron</item>
+        <item>Cube</item>
+        <item>Icosahedron</item>
+        <item>Octahedron</item>
+        <item>TetraHedron</item>
+        <item>Prism</item>
+        <item>Pyramid</item>
+
+    </string-array>
+    <string-array name="line_geo_attribute">
+        <item>Mid Point</item>
+        <item>Slop Of Line</item>
+        <item>Distance</item>
+
+    </string-array>
+
+    <string-array name="circle_text">
+
+        <item>Area </item>
+        <item>circumference(C)</item>
+        <item>Diameter</item>
+        <item>Radius</item>
+
+
+    </string-array>
+    <string-array name="circle_sector_spinner_text">
+        <item>Sector Area </item>
+        <item>Arc Length</item>
+    </string-array>
+
+    <string-array name="sub_heading_circle_sector_spinner_arc_length">
+        <item>Radius(R)</item>
+        <item>Angle</item>
+
+    </string-array>
+    <string-array name="distance_between_points_text">
+        <item>Point 1</item>
+        <item>Point 2</item>
+    </string-array>
+    <string-array name="midpoint_of_line_text">
+        <item>Point 1</item>
+        <item>Point 2</item>
+    </string-array>
+    <string-array name="slope_of_line_text">
+        <item>Point 1</item>
+        <item>Point 2</item>
+
+    </string-array>
+    <string-array name="decagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="ellipse_text">
+        <item>Area</item>
+        <item>Diameter(p)</item>
+        <item>Diameter(q)</item>
+
+    </string-array>
+    <string-array name="equilateral_Triangle_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+        <item>Height</item>
+
+    </string-array>
+    <string-array name="heptagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="hexagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="nonagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="octagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="pentagon_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="rectangle_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+        <item>Side(b)</item>
+
+    </string-array>
+    <string-array name="square_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="cube_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="dodecahedron_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="ellipsoid_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Semi-axis(a)</item>
+        <item>Semi-axis(b)</item>
+        <item>Semi-axis(c)</item>
+
+    </string-array>
+    <string-array name="icosahedron_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="octahedron_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="sphere_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Radius(R)</item>
+        <item>Diameter</item>
+    </string-array>
+    <string-array name="tetrahedron_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Side(a)</item>
+    </string-array>
+    <string-array name="pyramid_Spinner_text">
+        <item>Volume</item>
+        <item>Surface Area</item>
+        <item>Lateral Area</item>
+    </string-array>
+    <string-array name="sub_heading_pyramid_spinner_volume">
+
+        <item>length</item>
+        <item>height</item>
+        <item>width</item>
+    </string-array>
+    <string-array name="hemisphere_spinner_text">
+        <item>Volume</item>
+        <item>Surface Area</item>
+
+    </string-array>
+    <string-array name="sub_heading_hemisphere_spinner_volume">
+        <item>Radius(R)</item>
+    </string-array>
+    <string-array name="prism_spinner_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Length</item>
+        <item>Height</item>
+        <item>Width</item>
+    </string-array>
+    <string-array name="sub_heading_prism_Area_spinner">
+        <item>Length</item>
+        <item>Height</item>
+        <item>Width</item>
+    </string-array>
+    <string-array name="sub_heading_prism_volume_spinner">
+        <item>Length</item>
+        <item>Height</item>
+        <item>Width</item>
+    </string-array>
+    <string-array name="sub_heading_prism_width_spinner">
+        <item>Length</item>
+        <item>Height</item>
+        <item>Volume</item>
+    </string-array>
+    <string-array name="sub_heading_prism_Length_spinner">
+        <item>width</item>
+        <item>Height</item>
+        <item>Volume</item>
+    </string-array>
+    <string-array name="sub_heading_prism_Height_spinner">
+        <item>Length</item>
+        <item>Width</item>
+        <item>Volume</item>
+    </string-array>
+    <string-array name="cylinder_spinner_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Radius(R)</item>
+        <item>Diameter</item>
+        <item>Height</item>
+
+    </string-array>
+    <string-array name="sub_heading_cylinder_area_spinner">
+
+        <item>Height</item>
+        <item>Radius(R)</item>
+
+
+    </string-array>
+    <string-array name="sub_heading_cylinder_radius_spinner">
+        <item>Diameter</item>
+        <item>Height</item>
+    </string-array>
+    <string-array name="sub_heading_cylinder_height_spinner">
+        <item>Volume</item>
+        <item>Radius(R)</item>
+    </string-array>
+
+    <string-array name="cone_spinner_text">
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Radius(R)</item>
+        <item>Diameter</item>
+        <item>Height</item>
+
+
+    </string-array>
+    <string-array name="sub_heading_cone_area_spinner">
+        <item>Radius(R)</item>
+        <item>Height</item>
+    </string-array>
+    <string-array name="sub_heading_cone_radius_spinner">
+        <item>Volume</item>
+        <item>Height</item>
+    </string-array>
+    <string-array name="sub_heading_cone_diameter_spinner">
+        <item>Radius(R)</item>
+    </string-array>
+    <string-array name="sub_heading_cone_height_spinner">
+        <item>Volume</item>
+        <item>Radius(R)</item>
+
+    </string-array>
+    <string-array name="right_triangle_spinner_text">
+
+        <item>Area</item>
+        <item>side(a)</item>
+        <item>side(b)</item>
+        <item>side(c)</item>
+        <item>alpha</item>
+        <item>beta</item>
+    </string-array>
+    <string-array name="sub_heading_right_triangle_area_spinner">
+
+        <item>side(a)</item>
+        <item>side(b)</item>
+
+    </string-array>
+    <string-array name="sub_heading_right_triangle_side_a_spinner">
+        <item>side(b)</item>
+        <item>side(c)</item>
+
+    </string-array>
+    <string-array name="sub_heading_right_triangle_side_b_spinner">
+        <item>side(a)</item>
+        <item>side(c)</item>
+
+    </string-array>
+    <string-array name="sub_heading_right_triangle_side_c_spinner">
+        <item>side(a)</item>
+        <item>side(b)</item>
+
+    </string-array>
+    <string-array name="sub_heading_right_triangle_alpha_spinner">
+        <item>side(a)</item>
+        <item>side(c)</item>
+
+    </string-array>
+    <string-array name="sub_heading_right_triangle_beta_spinner">
+        <item>side(b)</item>
+        <item>side(c)</item>
+
+    </string-array>
+
+    <string-array name="regular_polygon_spinner_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Number of edge(n)</item>
+        <item>side(a)</item>
+        <item>alpha</item>
+
+
+    </string-array>
+    <string-array name="sub_heading_regular_polygon_area_spinner">
+        <item>side(a)</item>
+        <item>Number of edge </item>
+    </string-array>
+    <string-array name="sub_heading_regular_polygon_number_of_edge">
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+
+    </string-array>
+    <string-array name="sub_heading_regular_polygon_side_a">
+        <item>Perimeter</item>
+        <item>Number of edge </item>
+
+    </string-array>
+
+    <string-array name="parallelogram_spinner_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>side(a)</item>
+        <item>side(b)</item>
+        <item>alpha</item>
+
+    </string-array>
+    <string-array name="sub_heading_parallelogram_area_spinner">
+
+        <item>side(b)</item>
+        <item>Height</item>
+
+    </string-array>
+
+    <string-array name="sub_heading_parallelogram_perimeter_spinner">
+
+        <item>side(a)</item>
+        <item>side(b)</item>
+
+    </string-array>
+    <string-array name="sub_heading_parallelogram_side_a_spinner">
+
+        <item>perimeter</item>
+        <item>side(b)</item>
+
+    </string-array>
+    <string-array name="sub_heading_parallelogram_side_b_spinner">
+
+        <item>Area</item>
+        <item>Height</item>
+
+    </string-array>
+    <string-array name="sub_heading_parallelogram_alpha_spinner">
+
+        <item>Height</item>
+        <item>side(a)</item>
+
+    </string-array>
+    <string-array name="isosceles_triangle_spinner_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>side(a)</item>
+        <item>side(b)</item>
+        <item>Height</item>
+        <item>alpha</item>
+        <item>beta</item>
+    </string-array>
+    <string-array name="sub_heading_isosceles_triangle_area_spinner">
+
+        <item>side(b)</item>
+        <item>Height</item>
+
+    </string-array>
+
+    <string-array name="sub_heading_isosceles_triangle_perimeter_spinner">
+
+        <item>side(a)</item>
+        <item>side(b)</item>
+
+    </string-array>
+    <string-array name="sub_heading_isosceles_triangle_side_a_spinner">
+        <item>side(b)</item>
+        <item>Height</item>
+
+
+
+    </string-array>
+    <string-array name="sub_heading_isosceles_triangle_side_b_spinner">
+
+        <item>Side(a)</item>
+        <item>Height</item>
+
+    </string-array>
+
+    <string-array name="sub_heading_isosceles_triangle_height_spinner">
+
+        <item>Side(a)</item>
+        <item>Side(b)</item>
+
+    </string-array>
+
+    <string-array name="sub_heading_isosceles_triangle_alpha_spinner">
+
+        <item>side(a)</item>
+        <item>Height</item>
+    </string-array>
+
+    <string-array name="sub_heading_isosceles_triangle_beta_spinner">
+
+        <item>Area</item>
+        <item>side(a)</item>
+
+    </string-array>
+
+    <string-array name="rhombus_text">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Side(a)</item>
+        <item>Diagonal P(p)</item>
+        <item>Diagonal Q(q)</item>
+        <item>Alpha</item>
+
+    </string-array>
+
+
+</resources>
