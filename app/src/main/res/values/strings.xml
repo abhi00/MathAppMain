@@ -33,10 +33,10 @@
     <string name="axis_b">Semi-axis(b)</string>
     <string name="axis_c">Semi-axis(c)</string>
     <string name="number_edge">Number Of Edge(N)</string>
+
+
+
     <string-array name="unit_converter">
-
-
-
         <item>Length</item>
         <item>Area</item>
         <item>Weight</item>
@@ -73,7 +73,7 @@
     </string-array>
 
     <string-array name="polygon_shape_attribute">
-       <item>Decagon</item>
+        <item>Decagon</item>
         <item>Petagon</item>
         <item>Heptagon</item>
         <item>Hexagon</item>
@@ -98,7 +98,7 @@
         <item>Square</item>
         <item>Parallelogram</item>
         <item>Rhombus</item>
-        </string-array>
+    </string-array>
     <string-array name="poly_shape_attribute">
         <item>Dodecahedron</item>
         <item>Cube</item>
@@ -130,11 +130,7 @@
         <item>Arc Length</item>
     </string-array>
 
-    <string-array name="sub_heading_circle_sector_spinner_arc_length">
-        <item>Radius(R)</item>
-        <item>Angle</item>
 
-    </string-array>
     <string-array name="distance_between_points_text">
         <item>Point 1</item>
         <item>Point 2</item>
@@ -389,6 +385,23 @@
 
     </string-array>
 
+    <string-array name="symbol_heading">
+        <item>Basic Math Symbol</item>
+        <item>Algebra Symbol</item>
+        <item>Geometry Symbol</item>
+        <item>Combinatorics Symbol</item>
+        <item>Logic Symbol</item>
+        <item>Roman Symbol</item>
+        <item>Set Theory Symbol</item>
+        <item>Greek Alphabet Symbol</item>
+        <item>Linear Algebra Symbol</item>
+        <item>Probability and Statistics Symbol</item>
+        <item>Numeral Symbol</item>
+        <item>Numeral Symbol</item>
+
+
+    </string-array>
+
     <string-array name="regular_polygon_spinner_text">
         <item>Area</item>
         <item>Perimeter</item>
@@ -477,7 +490,6 @@
     <string-array name="sub_heading_isosceles_triangle_side_a_spinner">
         <item>side(b)</item>
         <item>Height</item>
-
 
 
     </string-array>

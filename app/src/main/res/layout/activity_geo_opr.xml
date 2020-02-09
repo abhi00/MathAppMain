@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="@style/Theme.MyFancyTheme" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/first_text_label"/>
-        <EditText
+        <TextView
 
             android:textSize="20sp"
             android:background="@drawable/edit_text_background"
@@ -81,7 +81,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/second_text_label"/>
-        <EditText
+        <TextView
             android:textSize="20sp"
             android:background="@drawable/edit_text_background"
             android:layout_margin="10sp"
@@ -110,7 +110,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/third_text_label"/>
-        <EditText
+        <TextView
             android:textSize="20sp"
             android:background="@drawable/edit_text_background"
             android:layout_margin="10sp"
@@ -140,7 +140,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/fourth_text_label"/>
-        <EditText
+        <TextView
             android:textSize="20sp"
             android:background="@drawable/edit_text_background"
             android:layout_margin="10sp"
@@ -171,7 +171,7 @@
             android:gravity="center"
             android:textColor="@color/white"
             android:id="@+id/fifth_text_label"/>
-        <EditText
+        <TextView
 
             android:textSize="20sp"
             android:background="@drawable/edit_text_background"

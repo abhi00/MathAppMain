@@ -15,19 +15,22 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import com.androprex.unitconvertor.InputDialogBox;
 import com.androprex.unitconvertor.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class GeoOprActivity extends AppCompatActivity {
+public class GeoOprActivity extends AppCompatActivity implements View.OnClickListener,InputDialogBox.InputDialogListner {
 
     Toolbar toolbar;
     Spinner spinner_text;
     LinearLayout first_linear, second_linear, third_linear, fourth_linear, fifth_linear;
     TextView first_text, second_text, third_text, fourth_text, fifth_text, res, text_main;
     ImageView image;
-    EditText first_edit, second_edit, third_edit, fourth_edit, fifth_edit;
+    TextView first_edit, second_edit, third_edit, fourth_edit, fifth_edit;
     String type_opr;
     int spinner_count;
+    int count;
+    FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,7 @@ public class GeoOprActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar_opr_geo);
 
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle(type_opr);
 
         spinner_text = findViewById(R.id.spinner);
 
@@ -61,11 +65,21 @@ public class GeoOprActivity extends AppCompatActivity {
         fourth_edit = findViewById(R.id.fourth_edit);
         fifth_edit = findViewById(R.id.fifth_edit);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         res = findViewById(R.id.res_geo_opr);
 
         type_opr = getIntent().getExtras().getString(getResources().getString(R.string.intent_key));
         setView();
-        FloatingActionButton fab = findViewById(R.id.fab);
+
+        first_edit.setOnClickListener(this);
+        second_edit.setOnClickListener(this);
+        third_edit.setOnClickListener(this);
+        fourth_edit.setOnClickListener(this);
+        fifth_edit.setOnClickListener(this);
+        setResultforCircle();
+        fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,12 +167,19 @@ public class GeoOprActivity extends AppCompatActivity {
                         break;
 
 
+
                 }
 
             }
         });
 
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 
 
@@ -305,7 +326,8 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         fifth_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.isosceles);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bisosceles);
         third_text.setText(getResources().getString(R.string.sideb));
         fourth_text.setText(getResources().getString(R.string.height));
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.isosceles_triangle_spinner_text)));
@@ -434,7 +456,8 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         fifth_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.isosceles);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.brighttriangle);
         third_text.setText(getResources().getString(R.string.sidea));
         fourth_text.setText(getResources().getString(R.string.sideb));
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.right_triangle_spinner_text)));
@@ -503,7 +526,16 @@ public class GeoOprActivity extends AppCompatActivity {
 
         String output = null;
 
-        double x = Double.parseDouble(third_edit.getText().toString());
+        third_text.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              InputDialogBox dialogBox = new InputDialogBox();
+              dialogBox.show(getSupportFragmentManager(),"check");
+
+            }
+        });
+
+        /*double x = Double.parseDouble(third_edit.getText().toString());
 
         double y = Double.parseDouble(fourth_edit.getText().toString());
 
@@ -544,7 +576,7 @@ public class GeoOprActivity extends AppCompatActivity {
 
         } else {
             output = "Please Enter Value";
-        }
+        }*/
 
         return output;
     }
@@ -554,8 +586,9 @@ public class GeoOprActivity extends AppCompatActivity {
     public void setActivityforEquilateralTriangle() {
 
         fifth_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.equilateral);
+        image.setImageResource(R.drawable.bequilateral);
         spinner_text.setVisibility(View.GONE);
+        getSupportActionBar().setTitle(type_opr);
         text_main.setText(getResources().getString(R.string.one_val));
         first_text.setText(getResources().getString(R.string.area));
         second_text.setText(getResources().getString(R.string.perimeter));
@@ -573,7 +606,8 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bparallelogram);
         text_main.setText(getResources().getString(R.string.all_val));
         fourth_text.setText(getResources().getString(R.string.sideb));
         fifth_text.setText(getResources().getString(R.string.height));
@@ -687,8 +721,8 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.boctahedron);
         text_main.setText(getResources().getString(R.string.one_val));
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -705,8 +739,8 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bparallelogram);
         text_main.setText(getResources().getString(R.string.one_val));
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -720,8 +754,8 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bheptagon);
         text_main.setText(getResources().getString(R.string.one_val));
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -735,8 +769,8 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bdecagon);
         text_main.setText(getResources().getString(R.string.one_val));
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -750,8 +784,8 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-
-        image.setImageResource(R.drawable.parallelogram);
+        getSupportActionBar().setTitle(type_opr);
+        image.setImageResource(R.drawable.bhexagon);
         text_main.setText(getResources().getString(R.string.one_val));
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -767,7 +801,7 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.circlesector);
+        image.setImageResource(R.drawable.bcirclesector);
         text_main.setText(getResources().getString(R.string.all_val));
 
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.circle_sector_spinner_text)));
@@ -837,7 +871,7 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         spinner_text.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.circle);
+        image.setImageResource(R.drawable.bcircle);
         text_main.setText(getResources().getString(R.string.one_val));
 
         second_text.setText(getResources().getString(R.string.area));
@@ -849,15 +883,36 @@ public class GeoOprActivity extends AppCompatActivity {
     }
 
     public void setResultforCircle() {
+        double x;
+        String data,output;
+        Circle circle = new Circle();
+        switch (count)
+        {
 
-        second_text.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
+            case 2:
+               data = second_edit.getText().toString();
+               if(data!=null) {
+                   x = Double.parseDouble(data);
+                   output =circle.getResultByArea(x);
+                   res.setText(output);
+                   third_edit.setText(""+circle.getC());
+                   fourth_edit.setText(""+circle.getD());
+                   fifth_edit.setText(""+circle.getR());
 
+               }
 
-                return false;
-            }
-        });
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+
+        }
 
     }
 
@@ -872,7 +927,7 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         spinner_text.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.circle);
+        image.setImageResource(R.drawable.bellipse);
         text_main.setText(getResources().getString(R.string.two_val));
 
         third_text.setText(getResources().getString(R.string.area));
@@ -887,7 +942,7 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.equilateral);
+        image.setImageResource(R.drawable.bslopeofline);
         spinner_text.setVisibility(View.GONE);
         text_main.setText(getResources().getString(R.string.point_val));
         fourth_text.setText(getResources().getString(R.string.point1));
@@ -905,7 +960,7 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.pyramid);
+        image.setImageResource(R.drawable.bpyramid);
         text_main.setText(R.string.all_val);
         third_text.setText(getResources().getString(R.string.length));
         fourth_text.setText(getResources().getString(R.string.height));
@@ -977,7 +1032,7 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.cone);
+        image.setImageResource(R.drawable.bcone);
         text_main.setText(getResources().getString(R.string.all_val));
         fourth_text.setText(getResources().getString(R.string.rad));
         fifth_text.setText(getResources().getString(R.string.height));
@@ -1076,7 +1131,7 @@ public class GeoOprActivity extends AppCompatActivity {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.cylinder);
+        image.setImageResource(R.drawable.bcylinder);
         text_main.setText(R.string.input_value);
         fourth_text.setText(getResources().getString(R.string.height));
         fifth_text.setText(getResources().getString(R.string.rad));
@@ -1176,7 +1231,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforPrism() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.prism);
+        image.setImageResource(R.drawable.bprism);
         text_main.setText(R.string.all_val);
         third_text.setText(getResources().getString(R.string.length));
         fourth_text.setText(getResources().getString(R.string.height));
@@ -1272,7 +1327,7 @@ public class GeoOprActivity extends AppCompatActivity {
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
         fourth_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.hemisphere);
+        image.setImageResource(R.drawable.bhemisphere);
         text_main.setText(R.string.input_value);
         fifth_text.setText(getResources().getString(R.string.rad));
 
@@ -1333,7 +1388,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforPentagon() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.pentagon);
+        image.setImageResource(R.drawable.bpentagon);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -1345,7 +1400,7 @@ public class GeoOprActivity extends AppCompatActivity {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.tetrahedron);
+        image.setImageResource(R.drawable.btetrahedron);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
@@ -1358,7 +1413,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforSphere() {
 
         first_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.sphere);
+        image.setImageResource(R.drawable.bsphere);
         text_main.setText(R.string.one_val);
         second_text.setText(getResources().getString(R.string.area));
         third_text.setText(getResources().getString(R.string.volume));
@@ -1371,7 +1426,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforOctahedron() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.octahedron);
+        image.setImageResource(R.drawable.boctahedron);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
@@ -1382,7 +1437,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforIcosahedron() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.icosahedron);
+        image.setImageResource(R.drawable.bicosahedron);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
@@ -1391,7 +1446,7 @@ public class GeoOprActivity extends AppCompatActivity {
 
     /*======================================Ellipsoid===========================================*/
     private void setActivityforEllipsoid() {
-        image.setImageResource(R.drawable.ellipsoid);
+        image.setImageResource(R.drawable.bellipsoid);
         text_main.setText(R.string.three_val);
         first_text.setText(getResources().getString(R.string.area));
         second_text.setText(getResources().getString(R.string.volume));
@@ -1404,7 +1459,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforDodecahedron() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.dodecahedron);
+        image.setImageResource(R.drawable.bdodecahedron);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
@@ -1415,7 +1470,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforCube() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.cube);
+        image.setImageResource(R.drawable.bcube);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
@@ -1426,7 +1481,7 @@ public class GeoOprActivity extends AppCompatActivity {
     private void setActivityforSquare() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        image.setImageResource(R.drawable.square);
+        image.setImageResource(R.drawable.bsquare);
         text_main.setText(R.string.one_val);
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
@@ -1445,7 +1500,7 @@ public class GeoOprActivity extends AppCompatActivity {
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
         first_text.setText(R.string.one_val);
-        image.setImageResource(R.drawable.regular);
+        image.setImageResource(R.drawable.breguler);
         text_main.setText(getResources().getString(R.string.input_value));
 
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.regular_polygon_spinner_text)));
@@ -1542,6 +1597,66 @@ public class GeoOprActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+        switch (view.getId())
+        {
+            case R.id.first_edit:
+               setInputFromDialog(1);
+
+
+                break;
+            case R.id.second_edit:
+                setInputFromDialog(2);
+
+                break;
+            case R.id.third_edit:
+                setInputFromDialog(3);
+                break;
+            case R.id.fourth_edit:
+                setInputFromDialog(4);
+                break;
+            case R.id.fifth_edit:
+                setInputFromDialog(5);
+                break;
+
+
+
+        }
+
+    }
+
+    public void setInputFromDialog(int count)
+    {
+        InputDialogBox dialogBox = new InputDialogBox();
+        dialogBox.show(getSupportFragmentManager(),"");
+        this.count =count;
+    }
+
+    @Override
+    public void outText(String out) {
+
+        switch (count)
+        {
+            case 1:
+                first_edit.setText(out);
+                break;
+            case 2:
+                second_edit.setText(out);
+                break;
+            case 3:
+                third_edit.setText(out);
+                break;
+            case 4:
+                fourth_edit.setText(out);
+                break;
+            case 5:
+                fifth_edit.setText(out);
+                break;
+        }
+        setResultforCircle();
+    }
 }
 
 
