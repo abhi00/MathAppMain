@@ -6,24 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewViewHolder> {
 
  String[] title;
  Context context;
- int[] img_background,img;
+ int[] img_background  ={R.drawable.unit_background_pink, R.drawable.unit_background_purpal, R.drawable.unit_background_saffron, R.drawable.unit_background_pink, R.drawable.unit_background_purpal, R.drawable.unit_background_saffron};
+   int[] img = {R.drawable.length, R.drawable.area, R.drawable.weight, R.drawable.tempreture, R.drawable.time, R.drawable.volume};
 
-    public MyAdapter(String[] title, Context context, int[] img_background, int[] img) {
+    public MyAdapter(String[] title, Context context) {
         this.title = title;
         this.context = context;
-        this.img_background = img_background;
-        this.img = img;
     }
 
     @NonNull
@@ -40,11 +37,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewViewHolder> 
         holder.cardView.setBackgroundResource(img_background[position]);
         holder.imageView.setImageResource(img[position]);
         holder.textView.setText(title[position]);
+        holder.textView2.setVisibility(View.GONE);
 
     }
 
     @Override
     public int getItemCount() {
+
         return img.length;
     }
 
@@ -53,12 +52,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewViewHolder> 
 
         LinearLayout cardView;
         ImageView imageView;
-        TextView textView;
+        TextView textView,textView2;
         public MyViewViewHolder(@NonNull View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.card);
             imageView = itemView.findViewById(R.id.image);
             textView = itemView.findViewById(R.id.title);
+            textView2 = itemView.findViewById(R.id.sub_heading_geo);
         }
     }
 }
