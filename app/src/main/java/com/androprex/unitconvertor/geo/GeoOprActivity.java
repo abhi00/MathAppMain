@@ -903,13 +903,41 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =circle.getResultByCircum(x);
+                    res.setText(output);
+                    second_edit.setText(""+circle.getA());
+                    fourth_edit.setText(""+circle.getD());
+                    fifth_edit.setText(""+circle.getR());
+
+                }
 
                 break;
             case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =circle.getResultByDia(x);
+                    res.setText(output);
+                    second_edit.setText(""+circle.getA());
+                    third_edit.setText(""+circle.getC());
+                    fifth_edit.setText(""+circle.getR());
 
+                }
                 break;
             case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =circle.getResultByRad(x);
+                    res.setText(output);
+                    second_edit.setText(""+circle.getA());
+                    third_edit.setText(""+circle.getC());
+                    fourth_edit.setText(""+circle.getD());
 
+                }
                 break;
 
         }
@@ -1655,7 +1683,20 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                 fifth_edit.setText(out);
                 break;
         }
-        setResultforCircle();
+
+        setAutoSetResult();
+
+    }
+
+
+    public void setAutoSetResult()
+    {
+        switch (type_opr)
+        {
+            case "Circle":
+                setResultforCircle();
+                break;
+        }
     }
 }
 
