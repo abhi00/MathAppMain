@@ -8,7 +8,6 @@
     android:background="@drawable/converterback"
     tools:context=".MainActivity">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
@@ -23,5 +22,92 @@
         android:layout_height="wrap_content"
         app:dsv_orientation="horizontal" />
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+
+
+
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog1_TV"
+            android:text="cm"
+            android:textColor="@color/white"
+            android:layout_weight=".5"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_downarrow"
+            android:layout_marginTop="20dp"
+            android:layout_weight=".2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_dialog1_TV"
+            android:gravity="right"
+            android:hint="input"
+            android:inputType="number"
+            android:textSize="14sp"
+            android:layout_weight="2.3"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialog2_TV"
+            android:text="cm"
+            android:textColor="@color/white"
+            android:layout_weight=".5"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_downarrow"
+            android:layout_marginTop="20dp"
+            android:layout_weight=".2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_dilog2_TV"
+            android:gravity="right"
+            android:text="0"
+            android:inputType="number"
+            android:textSize="14sp"
+            android:layout_weight="2.3"
+            android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listview_LV"
+        android:layout_marginTop="20dp"/>
 
 </LinearLayout>

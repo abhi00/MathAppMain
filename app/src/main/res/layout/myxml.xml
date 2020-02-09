@@ -65,6 +65,7 @@
                 android:textColor="@color/white"
                 android:layout_marginTop="10dp"
                 android:id="@+id/sub_heading_geo"
+                android:layout_marginBottom="5dp"
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

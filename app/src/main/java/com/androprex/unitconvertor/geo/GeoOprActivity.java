@@ -963,6 +963,16 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         fifth_text.setText(getResources().getString(R.string.diaq));
     }
 
+    private void setResultForEclipse()
+    {
+        if(count==3)
+        {
+
+        }
+
+    }
+
+
 
     /*======================================slop of line  ===========================================*/
     private void setActivityforSlopOfline() {
@@ -1481,6 +1491,13 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.axis_a));
         fourth_text.setText(getResources().getString(R.string.axis_b));
         fifth_text.setText(getResources().getString(R.string.axis_c));
+    }
+
+    private void setResultforEllipsoid()
+    {
+
+
+
     }
     /*======================================Dodecahedron===========================================*/
 

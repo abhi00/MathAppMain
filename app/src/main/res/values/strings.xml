@@ -35,6 +35,151 @@
     <string name="number_edge">Number Of Edge(N)</string>
 
 
+    <string-array name="mm_L">
+        <item>meter</item>
+        <item>kilometer</item>
+        <item>centimeter</item>
+        <item>milimeter</item>
+        <item>micrometer</item>
+        <item>hectometer</item>
+        <item>nanometer</item>
+        <item>mile</item>
+        <item>inch</item>
+        <item>centiInch</item>
+        <item>microinch</item>
+        <item>foot</item>
+    </string-array>
+
+    <string-array name="cm_L">
+        <item>m</item>
+        <item>km</item>
+        <item>cm</item>
+        <item>mm</item>
+        <item>\u00B5m</item>
+        <item>hm</item>
+        <item>nm</item>
+        <item>mi</item>
+        <item>in</item>
+        <item>cin</item>
+        <item>\u00B5in</item>
+        <item>ft</item>
+    </string-array>
+
+    <string-array name="mm_A">
+        <item>square milimeter</item>
+        <item>square centimeter</item>
+        <item>square inches</item>
+        <item>square feed</item>
+        <item>square yard</item>
+        <item>square meter</item>
+        <item>acres</item>
+        <item>hectores</item>
+        <item>square kilometer</item>
+    </string-array>
+
+    <string-array name="cm_A">
+        <item>mm\u00B2</item>
+        <item>cm\u00B2</item>
+        <item>in\u00B2</item>
+        <item>ft\u00B2</item>
+        <item>yd\u00B2</item>
+        <item>m\u00B2</item>
+        <item>acre\u00B2</item>
+        <item>ha\u00B2</item>
+        <item>km\u00B2</item>
+    </string-array>
+
+    <string-array name="mm_w">
+        <item>Gram</item>
+        <item>miligram</item>
+        <item>microgram</item>
+        <item>kilogram</item>
+        <item>centigram</item>
+        <item>pound</item>
+        <item>carat</item>
+        <item>Ounce</item>
+        <item>Stone</item>
+        <item>kiloton</item>
+        <item>quintal</item>
+    </string-array>
+    <string-array name="cm_w">
+        <item>g</item>
+        <item>mg</item>
+        <item>\u00B5g</item>
+        <item>kg</item>
+        <item>cg</item>
+        <item>lb</item>
+        <item>ct</item>
+        <item>fl oz</item>
+        <item>st</item>
+        <item>kton</item>
+        <item>q</item>
+
+    </string-array>
+    <string-array name="mm_Tp">
+        <item>celcius</item>
+        <item>farenheit</item>
+        <item>kelvin</item>
+        <item>rankine</item>
+
+    </string-array>
+
+    <string-array name="cm_Tp">
+        <item>c</item>
+        <item>f</item>
+        <item>k</item>
+        <item>r</item>
+    </string-array>
+
+    <string-array name="mm_T">
+        <item>attosecond</item>
+        <item>picosecond</item>
+        <item>nanosecond</item>
+        <item>microsecond</item>
+        <item>second</item>
+        <item>minute</item>
+        <item>Hour</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Year</item>
+        <item>fornight</item>
+        <item>calender</item>
+        <item>solar year</item>
+    </string-array>
+
+    <string-array name="cm_T">
+        <item>as</item>
+        <item>ps</item>
+        <item>ns</item>
+        <item>ms</item>
+        <item>\u00B5s</item>
+        <item>min</item>
+        <item>h</item>
+        <item>d</item>
+        <item>wk</item>
+        <item>y</item>
+        <item>fn</item>
+        <item>yr</item>
+        <item>atrop</item>
+    </string-array>
+
+    <string-array name="mm_Vl">
+        <item>celcius</item>
+        <item>farenheit</item>
+        <item>kelvin</item>
+        <item>rankine</item>
+
+    </string-array>
+
+    <string-array name="cm_Vl">
+        <item>c</item>
+        <item>f</item>
+        <item>k</item>
+        <item>r</item>
+    </string-array>
+
+
+
 
     <string-array name="unit_converter">
         <item>Length</item>
