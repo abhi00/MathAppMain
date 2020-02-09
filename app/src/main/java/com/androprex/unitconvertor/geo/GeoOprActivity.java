@@ -38,7 +38,11 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_geo_opr);
         toolbar = findViewById(R.id.toolbar_opr_geo);
 
+        type_opr = getIntent().getExtras().getString(getResources().getString(R.string.intent_key));
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         getSupportActionBar().setTitle(type_opr);
 
         spinner_text = findViewById(R.id.spinner);
@@ -65,12 +69,9 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         fourth_edit = findViewById(R.id.fourth_edit);
         fifth_edit = findViewById(R.id.fifth_edit);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         res = findViewById(R.id.res_geo_opr);
 
-        type_opr = getIntent().getExtras().getString(getResources().getString(R.string.intent_key));
         setView();
 
         first_edit.setOnClickListener(this);
@@ -78,7 +79,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_edit.setOnClickListener(this);
         fourth_edit.setOnClickListener(this);
         fifth_edit.setOnClickListener(this);
-        setResultforCircle();
+
         fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -105,67 +106,31 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                         res.setText(setResultforHemisphere());
                         break;
 
-                    case "Tetrahedron":
-
-                        break;
-
-                    case "Sphere":
-
-                        break;
-
                     case "Prism":
                         res.setText(setResultforPrism());
 
                         break;
 
-                    case "Octahedron":
-
-                        break;
-
-                    case "Icosahedron":
-
-                        break;
-
-                    case "Ellipsoid":
-
-                        break;
-
-                    case "Dodecahedron":
-
-                        break;
                     case "Cylinder":
                         res.setText(setResultforCylinder());
                         break;
-
-                    case "Cube":
-
+                    case "Rhombus":
+                        res.setText(setResultforRhombus());
                         break;
-
                     case "Cone":
                         res.setText(setResultforCone());
-
-                        break;
-
-                    case "Square":
-
-                        break;
-
-                    case "Rhombus":
 
                         break;
 
                     case "Regular Polygon":
                      res.setText(setResultforRegular());
                         break;
+                    case "Eclipse":
+                        res.setText(setResultforEclipse());
 
-                    case "Rectangle":
-
+                    case"Rectangle":
+                        res.setText(setResultforRectangle());
                         break;
-
-                    case "Pentagon":
-
-                        break;
-
 
 
                 }
@@ -196,7 +161,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case "Equilateral":
-                setActivityforEquilateralTriangle();
+                setActivityforEquilateral();
                 break;
             case "Decagon":
                 setActivityforDecagon();
@@ -242,13 +207,12 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
             case "Pyramid":
                 setActivityforPyramid();
                 break;
-
             case "Hemisphere":
                 setActivityforHemisphere();
                 break;
 
-            case "Tetrahedron":
-                setActivityfortetrahedron();
+            case "TetraHedron":
+                setActivityforTetraHedron();
                 break;
 
             case "Sphere":
@@ -302,8 +266,8 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                 setActivityforRectangle();
                 break;
 
-            case "Pentagon":
-                setActivityforPentagon();
+            case "Petagon":
+                setActivityforPetagon();
                 break;
 
 
@@ -583,20 +547,85 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
 
     /*====================================== Equilateral ===========================================*/
-    public void setActivityforEquilateralTriangle() {
+    private void setActivityforEquilateral() {
 
-        fifth_linear.setVisibility(View.GONE);
+        first_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.bequilateral);
         spinner_text.setVisibility(View.GONE);
         getSupportActionBar().setTitle(type_opr);
         text_main.setText(getResources().getString(R.string.one_val));
-        first_text.setText(getResources().getString(R.string.area));
-        second_text.setText(getResources().getString(R.string.perimeter));
-        third_text.setText(getResources().getString(R.string.sidea));
-        fourth_text.setText(getResources().getString(R.string.height));
+        second_text.setText(getResources().getString(R.string.area));
+        third_text.setText(getResources().getString(R.string.perimeter));
+        fourth_text.setText(getResources().getString(R.string.sidea));
+        fifth_text.setText(getResources().getString(R.string.height));
 
 
     }
+
+
+    public void setResultforEquilateral() {
+        double x;
+        String data,output;
+        EquilateralTriangl equilateralTriangl=new EquilateralTriangl();
+        switch (count)
+        {
+
+            case 2:
+                data = second_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =equilateralTriangl.getResultByArea(x);
+                    res.setText(output);
+                    third_edit.setText(""+equilateralTriangl.getPeri());
+                    fourth_edit.setText(""+equilateralTriangl.getA());
+                    fifth_edit.setText(""+equilateralTriangl.getH());
+
+                }
+
+                break;
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =equilateralTriangl.getResultByPeri(x);
+                    res.setText(output);
+                    second_edit.setText(""+equilateralTriangl.getAr());
+                    fourth_edit.setText(""+equilateralTriangl.getA());
+                    fifth_edit.setText(""+equilateralTriangl.getH());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =equilateralTriangl.getResultBySide(x);
+                    res.setText(output);
+                    second_edit.setText(""+equilateralTriangl.getAr());
+                    third_edit.setText(""+equilateralTriangl.getPeri());
+                    fifth_edit.setText(""+equilateralTriangl.getH());
+
+                }
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =equilateralTriangl.getResultByHeight(x);
+                    res.setText(output);
+                    second_edit.setText(""+equilateralTriangl.getAr());
+                    third_edit.setText(""+equilateralTriangl.getPeri());
+                    fourth_edit.setText(""+equilateralTriangl.getA());
+
+                }
+                break;
+
+        }
+
+    }
+
+
 
 
 
@@ -732,6 +761,56 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+
+    public void setResultforOctagon() {
+        double x;
+        String data,output;
+        Octagon octagon=new Octagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+octagon.getPeri());
+                    fifth_edit.setText(""+octagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+octagon.getAr());
+                    fifth_edit.setText(""+octagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+octagon.getAr());
+                    fourth_edit.setText(""+octagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
     /*====================================== Nonagon ===========================================*/
 
 
@@ -750,6 +829,58 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
+    public void setResultforNonagon() {
+        double x;
+        String data,output;
+        Nonagon nonagon=new Nonagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =nonagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+nonagon.getPeri());
+                    fifth_edit.setText(""+nonagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =nonagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+nonagon.getAr());
+                    fifth_edit.setText(""+nonagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =nonagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+nonagon.getAr());
+                    fourth_edit.setText(""+nonagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+    /*+++++++++++++++++++++++++++++++++++++++ Heptagon++++++++++++++++++++++++++++++++++++++++++++++++*/
+
     private void setActivityforHeptagon() {
 
         first_linear.setVisibility(View.GONE);
@@ -763,6 +894,55 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         spinner_text.setVisibility(View.GONE);
 
     }
+    public void setResultforHeptagon() {
+        double x;
+        String data,output;
+        Heptagon heptagon=new Heptagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =heptagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+heptagon.getPeri());
+                    fifth_edit.setText(""+heptagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =heptagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+heptagon.getAr());
+                    fifth_edit.setText(""+heptagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =heptagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+heptagon.getAr());
+                    fourth_edit.setText(""+heptagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
 
     /*====================================== Decagon ===========================================*/
     private void setActivityforDecagon() {
@@ -778,6 +958,56 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         spinner_text.setVisibility(View.GONE);
     }
 
+    public void setResultforDecagon() {
+        double x;
+        String data,output;
+        Decagon decagon=new Decagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =decagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+decagon.getPeri());
+                    fifth_edit.setText(""+decagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =decagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+decagon.getAr());
+                    fifth_edit.setText(""+decagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =decagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+decagon.getAr());
+                    fourth_edit.setText(""+decagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
     /*====================================== Hexagon ===========================================*/
 
     private void setActivityforHexagon() {
@@ -792,6 +1022,58 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         fifth_text.setText(getResources().getString(R.string.sidea));
         spinner_text.setVisibility(View.GONE);
     }
+
+    public void setResultforHexagon() {
+        double x;
+        String data,output;
+        Hexagon hexagon=new Hexagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =hexagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+hexagon.getPeri());
+                    fifth_edit.setText(""+hexagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =hexagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+hexagon.getAr());
+                    fifth_edit.setText(""+hexagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =hexagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+hexagon.getAr());
+                    fourth_edit.setText(""+hexagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
 
 
     /*===================================== Circle Sector ===========================================*/
@@ -882,6 +1164,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
+
     public void setResultforCircle() {
         double x;
         String data,output;
@@ -890,16 +1173,16 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         {
 
             case 2:
-               data = second_edit.getText().toString();
-               if(data!=null) {
-                   x = Double.parseDouble(data);
-                   output =circle.getResultByArea(x);
-                   res.setText(output);
-                   third_edit.setText(""+circle.getC());
-                   fourth_edit.setText(""+circle.getD());
-                   fifth_edit.setText(""+circle.getR());
+                data = second_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =circle.getResultByArea(x);
+                    res.setText(output);
+                    third_edit.setText(""+circle.getC());
+                    fourth_edit.setText(""+circle.getD());
+                    fifth_edit.setText(""+circle.getR());
 
-               }
+                }
 
                 break;
             case 3:
@@ -944,9 +1227,6 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
-
-
     /*======================================Ellipse ===========================================*/
 
 
@@ -954,14 +1234,98 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
-        spinner_text.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.bellipse);
-        text_main.setText(getResources().getString(R.string.two_val));
+        text_main.setText(getResources().getString(R.string.all_val));
 
-        third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.diap));
         fifth_text.setText(getResources().getString(R.string.diaq));
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.ellipse_spinner)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+                    case 0:
+                        fourth_text.setText(getResources().getString(R.string.diap));
+                        fifth_text.setText(getResources().getString(R.string.diaq));
+
+
+                        spinner_count = 0;
+
+
+                        break;
+                    case 1:
+                        fourth_text.setText(getResources().getString(R.string.area));
+                        fifth_text.setText(getResources().getString(R.string.diaq));
+                        spinner_count = 1;
+                        break;
+                    case 2:
+
+                        fourth_text.setText(getResources().getString(R.string.area));
+                        fifth_text.setText(getResources().getString(R.string.diap));
+                        spinner_count = 2;
+
+                        break;
+
+
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
+
+
+    public String setResultforEclipse() {
+
+        Ellipse ellipse=new Ellipse();
+        String output = null;
+
+        double x = Double.parseDouble(fourth_edit.getText().toString());
+
+        double y = Double.parseDouble(fifth_edit.getText().toString());
+
+        if (fourth_edit != null && fifth_edit != null) {
+
+            switch (spinner_count) {
+                case 0:
+
+
+                    output = ellipse.getResultBypq(x, y);
+
+                    break;
+                case 1:
+
+                    output = ellipse.getResultByadq(x, y);
+
+                    break;
+                case 2:
+
+                    output = ellipse.getResultByadp(x, y);
+
+                    break;
+            }
+
+
+        } else
+
+            {
+            output = "Please Enter Value";
+        }
+
+        return output;
+    }
+
+
+
+
 
 
     /*======================================slop of line  ===========================================*/
@@ -1413,7 +1777,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     /*======================================Pentagon===========================================*/
 
-    private void setActivityforPentagon() {
+    private void setActivityforPetagon() {
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.bpentagon);
@@ -1421,10 +1785,63 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
         fifth_text.setText(getResources().getString(R.string.sidea));
+        spinner_text.setVisibility(View.GONE);
+
     }
+
+
+
+    public void setResultforPetagon() {
+        double x;
+        String data,output;
+        Pentagon pentagon=new Pentagon();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =pentagon.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+pentagon.getPeri());
+                    fifth_edit.setText(""+pentagon.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =pentagon.getResultByPeri(x);
+                    res.setText(output);
+                    third_edit.setText(""+pentagon.getAr());
+                    fifth_edit.setText(""+pentagon.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =pentagon.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+pentagon.getAr());
+                    fourth_edit.setText(""+pentagon.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
     /*======================================Tetrahedron===========================================*/
 
-    private void setActivityfortetrahedron() {
+    private void setActivityforTetraHedron() {
 
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
@@ -1433,7 +1850,62 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
         fifth_text.setText(getResources().getString(R.string.sidea));
+        spinner_text.setVisibility(View.GONE);
+
     }
+
+
+    public void setResultforTetraHedron() {
+        double x;
+        String data,output;
+       Tetrahedron tetrahedron= new Tetrahedron();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =tetrahedron.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+tetrahedron.getV());
+                    fifth_edit.setText(""+tetrahedron.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =tetrahedron.getResultByVolume(x);
+                    res.setText(output);
+                    third_edit.setText(""+tetrahedron.getAr());
+                    fifth_edit.setText(""+tetrahedron.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =tetrahedron.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+tetrahedron.getAr());
+                    fourth_edit.setText(""+tetrahedron.getV());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
 
     /*======================================Sphere===========================================*/
 
@@ -1447,8 +1919,71 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.volume));
         fourth_text.setText(getResources().getString(R.string.rad));
         fifth_text.setText(getResources().getString(R.string.dia));
+        spinner_text.setVisibility(View.GONE);
+
     }
 
+    public void setResultforSphere() {
+        double x;
+        String data,output;
+        Sphere sphere = new Sphere();
+        switch (count)
+        {
+
+            case 2:
+                data = second_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =sphere.getResultByArea(x);
+                    res.setText(output);
+                    third_edit.setText(""+sphere.getV());
+                    fourth_edit.setText(""+sphere.getR());
+                    fifth_edit.setText(""+sphere.getD());
+
+                }
+
+                break;
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =sphere.getResultByVolume(x);
+                    res.setText(output);
+                    second_edit.setText(""+sphere.getAr());
+                    fourth_edit.setText(""+sphere.getR());
+                    fifth_edit.setText(""+sphere.getD());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =sphere.getResultByRadius(x);
+                    res.setText(output);
+                    second_edit.setText(""+sphere.getAr());
+                    third_edit.setText(""+sphere.getV());
+                    fifth_edit.setText(""+sphere.getD());
+
+                }
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =sphere.getResultByDiameter(x);
+                    res.setText(output);
+                    second_edit.setText(""+sphere.getAr());
+                    third_edit.setText(""+sphere.getV());
+                    fourth_edit.setText(""+sphere.getR());
+
+                }
+                break;
+
+        }
+
+    }
     /*======================================Octahedron===========================================*/
 
     private void setActivityforOctahedron() {
@@ -1459,7 +1994,64 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
         fifth_text.setText(getResources().getString(R.string.sidea));
+        spinner_text.setVisibility(View.GONE);
+
     }
+
+
+
+    public void setResultforOctahedron() {
+        double x;
+        String data,output;
+        Octahedron octahedron=new Octahedron();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octahedron.getResultByar(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+octahedron.getV());
+                    fifth_edit.setText(""+octahedron.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octahedron.getResultByv(x);
+                    res.setText(output);
+                    third_edit.setText(""+octahedron.getAr());
+                    fifth_edit.setText(""+octahedron.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =octahedron.getResultBya(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+octahedron.getAr());
+                    fourth_edit.setText(""+octahedron.getV());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
+
     /*======================================Icosahedron===========================================*/
 
     private void setActivityforIcosahedron() {
@@ -1470,7 +2062,57 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
         fifth_text.setText(getResources().getString(R.string.sidea));
+        spinner_text.setVisibility(View.GONE);
     }
+
+    public void setResultforIcosahedron() {
+        double x;
+        String data,output;
+        Icosahedron icosahedron = new Icosahedron();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =icosahedron.getResultByar(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+icosahedron.getV());
+                    fifth_edit.setText(""+icosahedron.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =icosahedron.getResultByv(x);
+                    res.setText(output);
+                    third_edit.setText(""+icosahedron.getAr());
+                    fifth_edit.setText(""+icosahedron.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =icosahedron.getResultBya(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+icosahedron.getAr());
+                    fourth_edit.setText(""+icosahedron.getV());
+
+                }
+                break;
+
+        }
+
+    }
+
 
     /*======================================Ellipsoid===========================================*/
     private void setActivityforEllipsoid() {
@@ -1492,7 +2134,63 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
         fifth_text.setText(getResources().getString(R.string.sidea));
+        spinner_text.setVisibility(View.GONE);
     }
+
+
+    public void setResultforDodecahedron() {
+        double x;
+        String data,output;
+        Dodecahedron dodecahedron=new Dodecahedron();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =dodecahedron.getResultByar(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+dodecahedron.getV());
+                    fifth_edit.setText(""+dodecahedron.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =dodecahedron.getResultByv(x);
+                    res.setText(output);
+                    third_edit.setText(""+dodecahedron.getAr());
+                    fifth_edit.setText(""+dodecahedron.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =dodecahedron.getResultBya(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+dodecahedron.getAr());
+                    fourth_edit.setText(""+dodecahedron.getV());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
+
+
     /*======================================Cube===========================================*/
 
     private void setActivityforCube() {
@@ -1503,7 +2201,66 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.volume));
         fifth_text.setText(getResources().getString(R.string.sidea));
+
+        spinner_text.setVisibility(View.GONE);
+
     }
+
+    public void setResultforcube() {
+        double x;
+        String data,output;
+        Cube cube =new Cube();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =cube.getResultByar(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+cube.getV());
+                    fifth_edit.setText(""+cube.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =cube.getResultByv(x);
+                    res.setText(output);
+                    third_edit.setText(""+cube.getAr());
+                    fifth_edit.setText(""+cube.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =cube.getResultBya(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+cube.getAr());
+                    fourth_edit.setText(""+cube.getV());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
+
+
+
+
     /*======================================Square===========================================*/
 
     private void setActivityforSquare() {
@@ -1514,12 +2271,152 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         third_text.setText(getResources().getString(R.string.area));
         fourth_text.setText(getResources().getString(R.string.perimeter));
         fifth_text.setText(getResources().getString(R.string.sidea));
+
+        spinner_text.setVisibility(View.GONE);
+
     }
+
+    public void setResultforSquare() {
+        double x;
+        String data,output;
+        Square square=new Square();
+        switch (count)
+        {
+
+            case 3:
+                data = third_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =square.getResultByArea(x);
+                    res.setText(output);
+                    fourth_edit.setText(""+square.getPeri());
+                    fifth_edit.setText(""+square.getA());
+
+                }
+
+                break;
+            case 4:
+                data = fourth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =square.getResultByPerimeter(x);
+                    res.setText(output);
+                    third_edit.setText(""+square.getAr());
+                    fifth_edit.setText(""+square.getA());
+
+                }
+
+                break;
+            case 5:
+                data = fifth_edit.getText().toString();
+                if(data!=null) {
+                    x = Double.parseDouble(data);
+                    output =square.getResultBySide(x);
+                    res.setText(output);
+
+                    third_edit.setText(""+square.getAr());
+                    fourth_edit.setText(""+square.getPeri());
+
+                }
+                break;
+
+        }
+
+    }
+
+
+
+
+
+
+
+
     /*======================================Rhombus===========================================*/
 
     private void setActivityforRhombus() {
 
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        first_text.setText(R.string.all_val);
+        image.setImageResource(R.drawable.brhombus);
+        text_main.setText(getResources().getString(R.string.all_val));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.rhombus_spinner)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                    fourth_text.setText(getResources().getString(R.string.diagp));
+                    fifth_text.setText(getResources().getString(R.string.diagq));
+                    switch (i) {
+                    case 0:
+                        spinner_count = 0;
+                        fourth_text.setText(getResources().getString(R.string.diagp));
+                        fifth_text.setText(getResources().getString(R.string.diagq));
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+                        fourth_text.setText(getResources().getString(R.string.diagp));
+                        fifth_text.setText(getResources().getString(R.string.diagq));
+
+                        break;
+                    case 2:
+                        spinner_count = 2;
+                        third_linear.setVisibility(View.VISIBLE);
+                        third_text.setText(getResources().getString(R.string.diagp));
+                        fourth_text.setText(getResources().getString(R.string.diagq));
+                        fifth_text.setText(getResources().getString(R.string.sidea));
+                        break;
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
+
+    public String setResultforRhombus() {
+
+        Rhombus rhombus= new Rhombus();
+        String output = null;
+
+        double x = Double.parseDouble(fourth_edit.getText().toString());
+
+        double y = Double.parseDouble(fifth_edit.getText().toString());
+
+        if (fourth_edit != null && fifth_edit != null) {
+
+            switch (spinner_count) {
+                case 0:
+                    output = rhombus.getResultforArea(x, y);
+
+                    break;
+                case 1:
+                    output = rhombus.getResultforPerim(x, y);
+                    break;
+                case 2:
+                    output = rhombus.getResultforAlpha(x, y);
+                    break;
+
+            }
+
+
+        } else {
+            output = "Please Enter Value";
+        }
+
+        return output;
+    }
+
+
+
+
 
     /*======================================Regular polygon===========================================*/
     private void setActivityforRegular() {
@@ -1527,7 +2424,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        first_text.setText(R.string.one_val);
+        first_text.setText(R.string.all_val);
         image.setImageResource(R.drawable.breguler);
         text_main.setText(getResources().getString(R.string.input_value));
 
@@ -1623,8 +2520,95 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     private void setActivityforRectangle() {
 
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
+        third_linear.setVisibility(View.GONE);
+        image.setImageResource(R.drawable.bellipse);
+        text_main.setText(getResources().getString(R.string.all_val));
+
+        fourth_text.setText(getResources().getString(R.string.sidea));
+        fifth_text.setText(getResources().getString(R.string.sideb));
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.rectangle_spinner)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                switch (position) {
+                    case 0:
+
+                        spinner_count = 0;
+
+
+                        break;
+                    case 1:
+
+                        spinner_count = 1;
+
+
+                        break;
+
+                }
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
+
+    public String setResultforRectangle() {
+
+        Rectangle rectangle=new Rectangle();
+        String output = null;
+
+        double x = Double.parseDouble(fourth_edit.getText().toString());
+
+        double y = Double.parseDouble(fifth_edit.getText().toString());
+
+        if (fourth_edit != null && fifth_edit != null) {
+
+            switch (spinner_count) {
+                case 0:
+
+
+                    output = rectangle.getResultforArea(x, y);
+
+                    break;
+
+                case 1:
+
+
+                    output = rectangle.getResultforPerim(x, y);
+
+                    break;
+
+
+
+            }
+
+
+        } else
+
+        {
+            output = "Please Enter Value";
+        }
+
+        return output;
+    }
+
+
+
+
+
+
+
+/*++++++++++++++++++++++++++++++++++++++End+++++++++++++++++++=================================*/
     @Override
     public void onClick(View view) {
 
@@ -1696,6 +2680,50 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
             case "Circle":
                 setResultforCircle();
                 break;
+            case "Decagon":
+                setResultforDecagon();
+                break;
+            case "Hexagon":
+                setResultforHexagon();
+                break;
+            case "Heptagon":
+                setResultforHeptagon();
+                break;
+            case "Octagon":
+                setResultforOctagon();
+                break;
+            case "Petagon":
+                setResultforPetagon();
+                break;
+            case "Nonagon":
+                setResultforNonagon();
+                break;
+            case "Equilateral":
+                setResultforEquilateral();
+                break;
+            case "Square":
+                setResultforSquare();
+                break;
+            case"Cube":
+                setResultforcube();
+                break;
+            case "Dodecahedron":
+                setResultforDodecahedron();
+                break;
+            case"Icosahedron":
+                setResultforIcosahedron();
+                break;
+
+            case"Octahedron":
+                setResultforOctahedron();
+                break;
+            case"Sphere":
+                setResultforSphere();
+                break;
+            case"TetraHedron":
+                setResultforTetraHedron();
+                break;
+
         }
     }
 }
