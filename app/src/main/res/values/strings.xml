@@ -33,6 +33,36 @@
     <string name="axis_b">Semi-axis(b)</string>
     <string name="axis_c">Semi-axis(c)</string>
     <string name="number_edge">Number Of Edge(N)</string>
+    <string name="diagp">Diagonal P(p)</string>
+    <string name="diagq">Diagonal Q(q)</string>
+
+    <string-array name="ellipse_spinner">
+    <item>Area</item>
+    <item>Diameter(p)</item>
+    <item>Diameter(q)</item>
+
+</string-array>
+<string-array name="rectangle_spinner">
+
+    <item>Area</item>
+    <item>Perimeter</item>
+
+
+</string-array>
+
+    <string-array name="rhombus_spinner">
+        <item>Area</item>
+        <item>Perimeter</item>
+        <item>Alpha</item>
+    </string-array>
+
+    <string-array name="ellipsoid_spinner">
+
+        <item>Area</item>
+        <item>Volume</item>
+
+    </string-array>
+
 
 
 

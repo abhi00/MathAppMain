@@ -61,7 +61,20 @@ public class Square {
      return res;
      }
 
-       
+
+    public String getResultBySide(double a)
+    {
+        ar=Math.pow(a,2);
+        peri=4*a;
+        String out = "for calculating Area via side(a): \n"
+                +" ar=pow(a,2)\n"+ar+"\n calculating perimeter via side(a) P= 4*a "+ peri;
+        return out;
+
     }
+
+
+
+
+}
     
 

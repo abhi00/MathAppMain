@@ -32,7 +32,7 @@ public class GeometryActivity extends AppCompatActivity implements DiscreteScrol
     int[] img_polygon ={R.drawable.decagon,R.drawable.pentagon,R.drawable.heptagon,R.drawable.hexagon,R.drawable.nonagon,R.drawable.octagon,R.drawable.regular};
     int[] img_quard ={R.drawable.regular,R.drawable.square,R.drawable.parallelogram,R.drawable.rhombus};
     int[] img_poly ={R.drawable.dodecahedron,R.drawable.cube,R.drawable.icosahedron,R.drawable.octahedron,R.drawable.tetrahedron,R.drawable.prism,R.drawable.pyramid};
-    int[] img_round ={R.drawable.circlesector,R.drawable.ellipse,R.drawable.sphere,R.drawable.cylinder,R.drawable.hemisphere,R.drawable.ellipsoid};
+    int[] img_round ={R.drawable.circle,R.drawable.circlesector,R.drawable.ellipse,R.drawable.sphere,R.drawable.cylinder,R.drawable.hemisphere,R.drawable.ellipsoid};
     int[] img_line ={R.drawable.midpoint,R.drawable.slopeofline,R.drawable.distance};
 
 
