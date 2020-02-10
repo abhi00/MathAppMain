@@ -9,20 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".geo.LineActivity"></activity>
-        <activity android:name=".symbol.SymbolActivity" />
-        <activity android:name=".geo.GeoOprActivity" />
-        <activity android:name=".geo.GeometryActivity">
-
+        <activity android:name=".symbol.DisplayFileActivity"></activity>
+        <activity
+            android:name=".geo.LineActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".symbol.SymbolActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" >
-
-        </activity>
+        <activity
+            android:name=".geo.GeoOprActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".geo.GeometryActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

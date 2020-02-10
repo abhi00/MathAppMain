@@ -37,18 +37,18 @@
     <string name="diagq">Diagonal Q(q)</string>
 
     <string-array name="ellipse_spinner">
-    <item>Area</item>
-    <item>Diameter(p)</item>
-    <item>Diameter(q)</item>
+        <item>Area</item>
+        <item>Diameter(p)</item>
+        <item>Diameter(q)</item>
 
-</string-array>
-<string-array name="rectangle_spinner">
+    </string-array>
+    <string-array name="rectangle_spinner">
 
-    <item>Area</item>
-    <item>Perimeter</item>
+        <item>Area</item>
+        <item>Perimeter</item>
 
 
-</string-array>
+    </string-array>
 
     <string-array name="rhombus_spinner">
         <item>Area</item>
@@ -62,7 +62,6 @@
         <item>Volume</item>
 
     </string-array>
-
 
 
     <string-array name="mm_L">
@@ -207,8 +206,6 @@
         <item>k</item>
         <item>r</item>
     </string-array>
-
-
 
 
     <string-array name="unit_converter">
@@ -561,18 +558,21 @@
     </string-array>
 
     <string-array name="symbol_heading">
-        <item>Basic Math Symbol</item>
+
         <item>Algebra Symbol</item>
-        <item>Geometry Symbol</item>
+        <item>Basic Math Symbol</item>
+        <item>Calculus and analytical Symbol</item>
         <item>Combinatorics Symbol</item>
-        <item>Logic Symbol</item>
-        <item>Roman Symbol</item>
-        <item>Set Theory Symbol</item>
+        <item>Geometry Symbol</item>
         <item>Greek Alphabet Symbol</item>
         <item>Linear Algebra Symbol</item>
+        <item>Logic Symbol</item>
+        <item>Numeral Symbol</item>
         <item>Probability and Statistics Symbol</item>
-        <item>Numeral Symbol</item>
-        <item>Numeral Symbol</item>
+        <item>Roman Symbol</item>
+        <item>Set Theory Symbol</item>
+
+
 
 
     </string-array>
