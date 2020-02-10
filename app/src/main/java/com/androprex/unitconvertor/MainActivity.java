@@ -95,11 +95,16 @@ public class MainActivity extends AppCompatActivity implements DiscreteScrollVie
     public void onCurrentItemChanged(@Nullable RecyclerView.ViewHolder viewHolder, int i) {
        position = infiniteAdapter.getRealPosition(i);
 
+    }
 
+/*public void setDataForLength()
+{
 
+    geLenght()
+    lengthAdapter = new LengthAdapter(MainActivity.this, title, sub_title, list);
 
-        }
-
+}
+*/
 
 
 
