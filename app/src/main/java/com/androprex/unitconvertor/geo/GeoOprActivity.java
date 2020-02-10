@@ -121,8 +121,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                         res.setText(setResultforCone());
 
                         break;
-
-                    case "Regular Polygon":
+                    case "Regular":
                      res.setText(setResultforRegular());
                         break;
                     case "Eclipse":
@@ -132,7 +131,9 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                         res.setText(setResultforRectangle());
                         break;
 
-
+                    case"Ellipsoid":
+                        res.setText(setResultforEllipsoid());
+                        break;
                 }
 
             }
@@ -258,7 +259,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
                 setActivityforRhombus();
                 break;
 
-            case "Regular ":
+            case "Regular":
                 setActivityforRegular();
                 break;
 
@@ -490,16 +491,9 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
         String output = null;
 
-        third_text.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              InputDialogBox dialogBox = new InputDialogBox();
-              dialogBox.show(getSupportFragmentManager(),"check");
 
-            }
-        });
 
-        /*double x = Double.parseDouble(third_edit.getText().toString());
+        double x = Double.parseDouble(third_edit.getText().toString());
 
         double y = Double.parseDouble(fourth_edit.getText().toString());
 
@@ -540,7 +534,7 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
         } else {
             output = "Please Enter Value";
-        }*/
+        }
 
         return output;
     }
@@ -2116,14 +2110,75 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
 
     /*======================================Ellipsoid===========================================*/
     private void setActivityforEllipsoid() {
+
+        first_linear.setVisibility(View.GONE);
+        second_linear.setVisibility(View.GONE);
         image.setImageResource(R.drawable.bellipsoid);
-        text_main.setText(R.string.three_val);
-        first_text.setText(getResources().getString(R.string.area));
-        second_text.setText(getResources().getString(R.string.volume));
-        third_text.setText(getResources().getString(R.string.axis_a));
-        fourth_text.setText(getResources().getString(R.string.axis_b));
-        fifth_text.setText(getResources().getString(R.string.axis_c));
+        text_main.setText(getResources().getString(R.string.all_val));
+
+        spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.ellipsoid_spinner)));
+        spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                third_text.setText(getResources().getString(R.string.axis_a));
+                fourth_text.setText(getResources().getString(R.string.axis_b));
+                fifth_text.setText(getResources().getString(R.string.axis_c));
+                switch (i) {
+                    case 0:
+                        spinner_count = 0;
+
+                        break;
+
+                    case 1:
+                        spinner_count = 1;
+
+                        break;
+
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
+
+    public String setResultforEllipsoid() {
+
+        Ellipsoid ellipsoid =new Ellipsoid();
+        String output = null;
+
+        double x = Double.parseDouble(fourth_edit.getText().toString());
+
+        double y = Double.parseDouble(fifth_edit.getText().toString());
+        double z = Double.parseDouble(fifth_edit.getText().toString());
+        if (fourth_edit != null && fifth_edit != null) {
+
+            switch (spinner_count) {
+                case 0:
+                    output = ellipsoid.getResultForArea(x,y,z);
+
+                    break;
+                case 1:
+                    output = ellipsoid.getResultForVolume(x,y,z);
+                    break;
+            }
+
+
+        } else {
+            output = "Please Enter Value";
+        }
+
+        return output;
+    }
+
+
+
+
+
     /*======================================Dodecahedron===========================================*/
 
     private void setActivityforDodecahedron() {
@@ -2424,9 +2479,8 @@ public class GeoOprActivity extends AppCompatActivity implements View.OnClickLis
         first_linear.setVisibility(View.GONE);
         second_linear.setVisibility(View.GONE);
         third_linear.setVisibility(View.GONE);
-        first_text.setText(R.string.all_val);
         image.setImageResource(R.drawable.breguler);
-        text_main.setText(getResources().getString(R.string.input_value));
+        text_main.setText(getResources().getString(R.string.all_val));
 
         spinner_text.setAdapter(new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, getResources().getStringArray(R.array.regular_polygon_spinner_text)));
         spinner_text.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
